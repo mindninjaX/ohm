@@ -18,8 +18,8 @@ Figma file fileKey mwmHwXDuayUYeliDAlv3Fo, page "📱 Screens" (id 9:7425). Each
 | 20:27992 | S12.6 Trends, error (852) | `/trends?state=error` | demo only | HOME |
 | 9:7470 | S02 Notification (852) | `/notification` | | ADD |
 | 9:7475 | S03 Add a bill (852) | `/add` (sheet over `/`) | | ADD |
-| 11:10839 | S03.1 Forward the email (852) | `/add/email` (sheet over `/`) | | ADD |
-| 9:7521 | S04 Reading (852) | `/reading` | reading in progress | ADD |
+| 11:10839 | S03.1 Forward the email (852) | `/add/email` (sheet over `/`) | with Simulate the email arriving (sheet 480) | ADD |
+| 9:7521 | S04 Reading (852) | `/reading` | reading in progress, with Skip | ADD |
 | 20:28427 | S04.1 Reading details (2079) | `/reading?open=all` | reading done, every step open | ADD |
 | 20:29031 | S04.2 Stop reading (852) | `/reading/stop` (sheet over `/reading`) | | ADD |
 | 9:7555 | S05 Your connection (1164) | `/connection` | rows closed | CONNECTION |
@@ -32,6 +32,7 @@ Figma file fileKey mwmHwXDuayUYeliDAlv3Fo, page "📱 Screens" (id 9:7425). Each
 | 11:15883 | S05.9 Your connection, sent (1258) | `/connection?changed=sent` | | CONNECTION |
 | 9:7592 | S06 Bill summary (1569) | `/bill` | date Thu 3 Sep; card animates Summary > Summary discounted | SUMMARY |
 | 20:31078 | S06.1 After Tue 8 Sep (1573) | `/bill` | demo date `after` | SUMMARY |
+| 34:115778 | S06.2 Bill summary, paid (1201) | `/bill` | demo flag `paid`; card "Summary paid", no price ladder, footer View receipt | SUMMARY |
 | 9:7654 | S07 Checks (2022) | `/bill/checks` | | SUMMARY |
 | 9:7679 | S08 Breakdown (1539) | `/bill/breakdown` | | SUMMARY |
 | 20:30011 | S08c Breakdown, what a part means (1539) | `/bill/breakdown?info=fuel` | info popover open | SUMMARY |
@@ -43,5 +44,5 @@ Figma file fileKey mwmHwXDuayUYeliDAlv3Fo, page "📱 Screens" (id 9:7425). Each
 
 Flows (from the Figma prototype; arrows on the Screens page show each tap):
 1. First bill: S01 > Add bill > S03 > Upload the PDF (simulated upload) or Take a photo (simulated camera) > S04 (scan animation, steps tick off, about 8 to 10 s, skippable) > S04.1 when a step is tapped or when done > Continue > S05 > Save and see August bill > S06. S03 > Forward the email > S03.1 > "Simulate the email arriving" > S02. S04 > Stop reading this bill > S04.2 > Stop reading > S01. S05 > Something looks off > S05.1 > S05.3 > Save > S05.8 > Save and see > S06; S05.1 > S05.4 > Send > S05.9.
-2. Monthly bill: S02 > tap > S06 > Pay ₹36,09,190 > Razorpay loader > S11 > Share receipt > S11.1; S11 > Done > S01.4 (Home, paid). S06 detours: No hidden charges row > S07; See the full breakdown > S08 (info icon > S08c); Share with owner > S09 (Copy link > toast, S09.1); See trends > S12.
+2. Monthly bill: S02 > tap > S06 > Pay ₹36,09,190 > Razorpay loader > S11 > Share receipt > S11.1; S11 > Done > S01.4 (Home, paid); Back from S11 lands on S06.2 (S06 once paid), whose View receipt goes to S11. S06 detours: No hidden charges row > S07; See the full breakdown > S08 (info icon > S08c); Share with owner > S09 (Copy link > toast, S09.1); See trends > S12.
 3. Home: S01 > All bills > S01.1 > July 2026 > S01.2; Where these numbers come from > S01.3; Trends tab > S12 (tabs 2026 or 2025, tap a bar, metric switch); Review and pay > S06; No hidden charges row > S07.

@@ -20,6 +20,7 @@ const LADDER_DELAY = 1.45;
  *
  * Once the bill is paid (the demo flag `paid`, set by /pay; Back from Paid or Home lands here) the card says so,
  * the price ladder goes (there is nothing left to time) and the footer offers the receipt instead of a second payment.
+ * That is S06.2 (Bill card / Home, Layout Summary paid; View receipt is a Secondary L with no Razorpay trust line).
  */
 export function BillSummary() {
   const navigate = useNavigate();

@@ -16,9 +16,8 @@ export const ADD_TILE_GAP = 11;
 
 
 /**
- * Prototype-only controls that Figma does not draw ("Skip" on S04, "Simulate the email arriving" on S03.1).
- * In capture mode (the Figma frames, `npm run diff`, /compare) a control is left out, so the frame is exactly
- * what Figma draws. Once a control has been added to its Figma frame, set it to true here and it shows in
- * capture mode too.
+ * Prototype-only controls ("Skip" on S04, "Simulate the email arriving" on S03.1). In capture mode (the Figma
+ * frames, `npm run diff`, /compare) a control is left out unless its flag is true, so the frame is exactly what
+ * Figma draws. Both are drawn in Figma since 14 Oct (S04 and the S04 backdrop of S04.2; S03.1), so both are true.
  */
-export const IN_FIGMA = { skip: false, simulateEmail: false } as const;
+export const IN_FIGMA = { skip: true, simulateEmail: true } as const;

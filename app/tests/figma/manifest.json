@@ -76,8 +76,8 @@
     "figmaHeight": "852",
     "pngWidth": 786,
     "pngHeight": 1704,
-    "bytes": 88472,
-    "exportedAt": "2026-10-14T17:48:36+0530"
+    "bytes": 91546,
+    "exportedAt": "2026-10-14T20:15:30+0530"
   },
   "S04": {
     "nodeId": "9:7521",
@@ -86,8 +86,8 @@
     "figmaHeight": "852",
     "pngWidth": 786,
     "pngHeight": 1704,
-    "bytes": 83555,
-    "exportedAt": "2026-10-14T17:48:36+0530"
+    "bytes": 84855,
+    "exportedAt": "2026-10-14T20:15:30+0530"
   },
   "S04-1": {
     "nodeId": "20:28427",
@@ -106,8 +106,8 @@
     "figmaHeight": "852",
     "pngWidth": 786,
     "pngHeight": 1704,
-    "bytes": 84874,
-    "exportedAt": "2026-10-14T17:48:37+0530"
+    "bytes": 86010,
+    "exportedAt": "2026-10-14T20:15:30+0530"
   },
   "S05": {
     "nodeId": "9:7555",
@@ -338,5 +338,15 @@
     "pngHeight": 1704,
     "bytes": 40708,
     "exportedAt": "2026-10-14T17:48:31+0530"
+  },
+  "S06-2": {
+    "nodeId": "34:115778",
+    "frameName": "S06.2 Bill summary, paid",
+    "figmaWidth": "393",
+    "figmaHeight": "1201",
+    "pngWidth": 786,
+    "pngHeight": 2402,
+    "bytes": 124233,
+    "exportedAt": "2026-10-14T20:15:30+0530"
   }
 }

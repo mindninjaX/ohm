@@ -175,6 +175,9 @@ Status: **built** = the file exists; **to build** = the screen builder for that 
 | Bill crop, Compare tiles | 11:12483, 11:12919 | BillCrop, CompareTiles | `src/screens/connection/components/` | to build |
 | Illustration / Second look | 11:12946 | SecondLook | `src/illustrations/SecondLook.tsx` | built |
 | Bill card / Home (see HOME above, id kept) | 11:11229 | BillCardHome | `src/screens/home/components/BillCardHome.tsx` | built |
+| Bill card / Home, Layout Summary paid (S06.2; added 14 Oct, 361 x 269: Summary geometry with the Paid due line and the muted "Waiting for Northgrid to confirm" tile) | 34:115747 | BillCardPaid | `src/screens/summary/components/BillCard.tsx` | built |
+| Skip on S04 and the S04 backdrop of S04.2 (Ohm / Button Link M instance, label overridden to Text-sm/Medium `ink-muted`, 12 px side padding, 44 tall, top right of the bill art) | 33:115726, 33:115733 | Skip button (inside `ReadingScreen`, shown in capture mode through `IN_FIGMA.skip`) | `src/screens/add/ReadingScreen.tsx` | built |
+| Simulate the email arriving on S03.1 (Ohm / Button Link M instance, last child of the sheet's Content slot, 12 under Copy address, centred) | 33:115739 | Link M button in the sheet footer slot (`IN_FIGMA.simulateEmail`) | `src/screens/add/ForwardEmailSheet.tsx` | built |
 
 Shell pieces with no Figma component: capture mode (`src/shell/capture.ts`, `CaptureFrame.tsx`), the phone frame (`src/components/MobileFrame.tsx`), screen transitions (`src/shell/transitions.tsx`), sheet routes (`src/shell/sheets.tsx`), the Prototype menu (`src/shell/PrototypeMenu.tsx`).
 
@@ -211,6 +214,7 @@ Figma page "Screens" (id 9:7425). `tests/figma/<Id>.png` is the 2x export; `npm 
 | S05-9 | S05.9 Your connection, sent | 11:15883 | `/connection` | `?changed=sent` |  | CONNECTION |  |
 | S06 | S06 Bill summary | 9:7592 | `/bill` |  |  | SUMMARY | date Thu 3 Sep; resting state Summary discounted |
 | S06-1 | S06.1 After Tue 8 Sep | 20:31078 | `/bill` |  | `date:after` | SUMMARY | demo date after |
+| S06-2 | S06.2 Bill summary, paid | 34:115778 | `/bill` |  | `paid:1` | SUMMARY | demo flag paid |
 | S07 | S07 Checks | 9:7654 | `/bill/checks` |  |  | SUMMARY |  |
 | S08 | S08 Breakdown | 9:7679 | `/bill/breakdown` |  |  | SUMMARY |  |
 | S08c | S08c Breakdown, what a part means | 20:30011 | `/bill/breakdown` | `?info=fuel` |  | SUMMARY | info popover open |

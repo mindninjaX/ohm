@@ -68,6 +68,7 @@ export const FRAMES: readonly FrameSpec[] = [
   // SUMMARY
   { id: 'S06', name: 'S06 Bill summary', nodeId: '9:7592', path: '/bill', area: 'SUMMARY', note: 'date Thu 3 Sep; resting state Summary discounted' },
   { id: 'S06-1', name: 'S06.1 After Tue 8 Sep', nodeId: '20:31078', path: '/bill', demo: { date: 'after' }, area: 'SUMMARY', note: 'demo date after' },
+  { id: 'S06-2', name: 'S06.2 Bill summary, paid', nodeId: '34:115778', path: '/bill', demo: { paid: '1' }, area: 'SUMMARY', note: 'demo flag paid' },
   { id: 'S07', name: 'S07 Checks', nodeId: '9:7654', path: '/bill/checks', area: 'SUMMARY' },
   { id: 'S08', name: 'S08 Breakdown', nodeId: '9:7679', path: '/bill/breakdown', area: 'SUMMARY' },
   { id: 'S08c', name: 'S08c Breakdown, what a part means', nodeId: '20:30011', path: '/bill/breakdown', query: { info: 'fuel' }, area: 'SUMMARY', note: 'info popover open' },

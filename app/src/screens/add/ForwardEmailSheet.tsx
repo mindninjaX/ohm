@@ -11,11 +11,10 @@ import lockWallpaper from './assets/lock-wallpaper.jpg';
  * S03.1 Forward the email (/add/email, a sheet over Home). Figma: Ohm / Sheet holding the Forward guide
  * (the envelope, three numbered steps) and the Copy address button, 16 apart.
  *
- * Copy address copies the address and shows the "Copied" toast. "Simulate the email arriving" is not in
- * Figma: it is the prototype's way to make the email arrive, and it opens the lock screen notification
- * (S02). It is a Link M button in the sheet's footer slot, above the home indicator zone, so the sheet
- * grows by about 32 px to hold it. In capture mode (the Figma frame, the diff) it is left out and the
- * sheet is exactly the height Figma draws; see IN_FIGMA in copy.ts.
+ * Copy address copies the address and shows the "Copied" toast. "Simulate the email arriving" is the prototype's
+ * way to make the email arrive, and it opens the lock screen notification (S02). It is a Link M button in the
+ * sheet's footer slot, above the home indicator zone, so the sheet is 32 px taller (480) than without it. Figma
+ * draws it too since 14 Oct (an Ohm / Button Link M instance in the sheet's Content slot); see IN_FIGMA in copy.ts.
  */
 export function ForwardEmailSheet() {
   const navigate = useNavigate();

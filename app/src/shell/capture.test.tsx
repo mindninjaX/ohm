@@ -76,7 +76,7 @@ describe('capture mode', () => {
 
 describe('frames (tests/visual/screens.ts)', () => {
   it('has one entry per built Figma frame in SCREENS.md, with unique ids and node ids', () => {
-    expect(FRAMES).toHaveLength(34);
+    expect(FRAMES).toHaveLength(35);
     expect(new Set(FRAMES.map((f) => f.id)).size).toBe(FRAMES.length);
     expect(new Set(FRAMES.map((f) => f.nodeId)).size).toBe(FRAMES.length);
   });

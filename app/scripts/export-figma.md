@@ -1,6 +1,6 @@
 # Exporting the Figma frames (re-run this when a frame changes)
 
-Every built frame in `specs/dev/SCREENS.md` has an exact 2x PNG in `tests/figma/<id>.png` (`S01.1` is `S01-1.png`), plus `tests/figma/manifest.json` (node id, frame name, size, export time). `npm run diff` and the `/compare/<id>` page read these. Last full export: 14 Oct 2026, 34 frames.
+Every built frame in `specs/dev/SCREENS.md` has an exact 2x PNG in `tests/figma/<id>.png` (`S01.1` is `S01-1.png`), plus `tests/figma/manifest.json` (node id, frame name, size, export time). `npm run diff` and the `/compare/<id>` page read these. Last full export: 14 Oct 2026, 35 frames (S04, S04-2, S03-1 and the new S06-2 re-exported after the Figma sync of Skip, Simulate the email arriving and the paid state).
 
 The frame list (id, node id, route) is `tests/visual/screens.ts`. `npm run diff -- --list` prints it.
 
