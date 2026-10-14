@@ -32,7 +32,7 @@ If this session ends, start here.
 ## Status at handoff
 - Figma designs: done and audited (ready for development); file organised; no annotations.
 - App: DONE and live (14 Oct). 34 frames match Figma in size, all under 1.5 % pixel mismatch (S01.3 and S09.1 differ only because Figma hides the backdrop / is a bare overlay). Opus review fixes applied (transitions, toasts, paid state, S06 animation, reading flow). typecheck, 252 tests and build pass.
-- Figma sync still owed (app has, Figma lacks): the Reading screen's "Skip" link (S04), the "Simulate the email arriving" link (S03.1), and the S06 paid state (card shows Paid, footer View receipt).
+- Figma and app in sync (14 Oct): Skip on S04, Simulate the email arriving on S03.1, new S06.2 paid state (34:115778) added to Figma.
 - Deck: DONE as is (user, 14 Oct: "whatever we have now is good enough"). 29 slides in Section "Deck" on 🎤 Deck; review and polish deliberately skipped. Real QR for the live link on slides 02 and 17.
 
 ## Still to do
