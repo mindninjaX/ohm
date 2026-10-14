@@ -1,0 +1,188 @@
+{
+  "_about": "Keys read from the shadcn/ui kit by sitsiilia (library file rbjdZF2zNKeubApgiy0ifS, read only). Import sets with figma.importComponentSetByKeyAsync(setKey), single components and icons with figma.importComponentByKeyAsync(key), variables with figma.variables.importVariableByKeyAsync(key), text styles with figma.importStyleByKeyAsync(key). Property names with #ids are component properties (BOOLEAN unless noted).",
+  "libraryFileKey": "rbjdZF2zNKeubApgiy0ifS",
+  "components": {
+    "Button": {
+      "setKey": "caf5b09d217d4b6c20d5eb27f2b65d107a430149",
+      "variants": { "Variant": ["Default", "Outline", "Secondary", "Ghost", "Destructive", "Link"], "Size": ["xs", "sm", "default", "lg"], "State": ["Default", "Hover", "Focus", "Disabled"], "Roudness": ["Default", "Rounded"] },
+      "props": ["Left icon#2106:0", "Right icon#2106:385", "Kbd#2108:770"],
+      "text": "Text > Button"
+    },
+    "Icon Button": {
+      "setKey": "ade52d144940dd5c213718688b44454aaeb0c1e8",
+      "variants": { "Variant": ["Default", "Outline", "Secondary", "Ghost", "Destructive"], "Size": ["xs", "sm", "default", "lg"], "State": ["Default", "Hover", "Focused", "Disabled"], "Roundness": ["Default", "Rounded"] },
+      "props": [],
+      "icon": "lucide/circle-fading-plus (swap)"
+    },
+    "Badge": {
+      "setKey": "a4c1a168f1877d104d7dd7260eda7d08b19cbb55",
+      "variants": { "State": ["Default", "Secondary", "Destructive", "Outline", "Ghost"] },
+      "props": ["Left icon#2122:0", "Right icon#2122:11"],
+      "text": "Text > Default"
+    },
+    "Card header": {
+      "setKey": "b8cd70279eb12fc06fdc5db93cab8590bdea7649",
+      "variants": { "Type": ["Image", "Button", "Badge"], "Dir": ["None", "LTR", "RTL", "Middle"] },
+      "props": ["Button#1932:24", "Badge#1932:28"],
+      "text": "Frame 12 > Card title, Card description"
+    },
+    "Card footer": {
+      "key": "6e940b4e28625624ad0a3326ca879bdbe2875d82",
+      "props": ["Double button#1932:32", "Footer text#2161:0"]
+    },
+    "Card": {
+      "note": "No root Card component in the kit. The kit's Card is a frame: vertical auto layout, gap 16, padding-top 16, radius 14 (rounded-xl), fill `card`, stroke `border` 1px, holding Card header / content / Card footer. Card content (f43a7cc2c18c08efe3a817edcc49da39b6b27085) is not published and cannot be imported."
+    },
+    "Alert": {
+      "setKey": "6ab7da70386da6746327e51a08fd0e31378171b7",
+      "variants": { "State": ["Default", "Destructive"], "Dir": ["LTR", "RTL"] },
+      "props": ["Button#1774:11", "Alert description#1774:14", "Icon#1774:17"],
+      "text": "Frame 21 > Wrapper > Alert title; Wrapper > Alert description",
+      "icon": "lucide/circle-check (swap)"
+    },
+    "Progress": {
+      "note": "No Progress component. The kit builds Progress from SliderTrack + SliderRange (no thumb), see the Progress page.",
+      "SliderTrack": { "setKey": "c4f20ec6d3718aa78df34ddb52b0710c686aef0f", "variants": { "Orientation": ["Horizontal", "Vertical"] } },
+      "SliderRange": { "setKey": "673bae61670270d33910f20e89b207e073f29c78", "variants": { "Orientation": ["Horizontal", "Vertical"] } },
+      "SliderThumb": { "setKey": "03586d02bc3f8e2ae13eafdec6fb426c484f138c", "variants": { "State": [] } }
+    },
+    "Item": {
+      "setKey": "02f1ecb64205aa1386c72608eee46c03e5a42e7e",
+      "variants": { "Type": ["Default", "Outline", "Muted"], "State": ["Default", "Hover"], "Size": ["Default", "Extra small"], "Dir": ["LTR", "RTL"] },
+      "props": ["Avatar#2118:973", "Image#2118:974", "Left icon#2118:975", "Right icon#2118:976", "Button#2118:977", "Item description #1#2118:978", "Item description #2#2118:979"],
+      "text": "Item content > Item title > (text), Item content > Item description > Item description"
+    },
+    "ItemHeader": { "key": "20f4db818f3542f99926092f6b59b24aa73d4330" },
+    "Separator": {
+      "setKey": "6e231918ba4e3bb6484d1df5a116ce02e6450761",
+      "libraryName": "Seperator",
+      "variants": { "Direction": ["Horizontal", "Vertical"] }
+    },
+    "Accordion": {
+      "AccordionItem": { "setKey": "cd70fafb03e38b7085afc9b7bead1a8198f32d1c", "variants": { "Dir": ["LTR", "RTL"], "Data State": ["Open", "Closed"] }, "props": ["Divider#2182:3"] },
+      "AccordionTrigger": { "setKey": "9d6475da26bbbcea7a2e1ea4a49807ad83a2bb5b", "variants": { "State": ["Default", "Focus", "Disabled", "Hover"], "Dir": ["RTL", "LTR"] }, "text": "AccordionTrigger > Collection item > Title" },
+      "AccordionContent": { "setKey": "1e1615a1fc1c87b9a302c650221758d0a7c47bdb", "variants": { "Dir": ["RTL", "LTR"] }, "text": "AccordionContent > Description" }
+    },
+    "Sheet": {
+      "note": "No root Sheet component. The kit's Sheet is a frame (fill `background`) holding SheetHeader, content, SheetFooter.",
+      "SheetHeader": { "setKey": "78babf4135ea5de2cd4270b7e66daef4081e74d0", "variants": { "Dir": ["LTR", "RTL"] }, "props": ["Icon#2055:7"], "text": "Sheet title > (text), Sheet description > (text)" },
+      "SheetFooter": { "key": "d1050460641dce822f96ebc5e5445e9035195a4f" }
+    },
+    "Radio Group": {
+      "RadioGroup": { "setKey": "561065ad4dc7fb95c0539a6c205d7c5db3803b3d", "variants": { "State": ["Default", "Invalid", "Disabled"], "Dir": ["LTR", "RTL"] }, "props": ["Field description#2066:0", "Left Radio#2269:0", "Right Radio#2269:7"] },
+      "Radio": { "setKey": "509b8f1a0f3996faea43322997436f5a3f89f0e2", "variants": { "Interaction": ["Default", "Focus", "Disabled", "Error", "Error disabled"], "Data state": ["Unchecked", "Invalid-checked", "Checked", "Invalid-unchecked"] } }
+    },
+    "Tabs": {
+      "Tab": { "setKey": "42b36e04f329e28eb32344cb239f22c9b37fd036", "variants": { "Variant": ["Default", "Underline"], "Selected": ["On", "Off"], "State": ["Default", "Hover", "Focus", "Disabled"], "Dir": ["LTR", "RTL"] }, "props": ["Icon#2003:0", "Badge#2306:0"], "text": "Text > Tab" },
+      "note": "No TabsList component; the kit wraps Tab instances in a horizontal auto-layout frame (gap 4)."
+    },
+    "Avatar": {
+      "Avatar": { "setKey": "fe45f5a446d6cf24d3faaccc409fab7a19692605", "variants": { "Size": ["sm", "default", "lg"], "Dir": ["LTR", "RTL"] }, "props": ["Badge#1866:10"], "note": "image avatar (Avatar image RECT)" },
+      "Avatar (fallback)": { "setKey": "2dc5ebbdd84ecbca11b35118002c886909394dda", "variants": { "Size": ["default", "lg", "sm"], "Type": ["Count", "Icon"] }, "note": "Count type holds a text label, used for initials" },
+      "AvatarBadge": { "setKey": "0faf51eaef54ec941e58a7b0f077fec26556ba9d", "variants": { "Type": ["Icon", "Status"], "Size": ["xs", "default", "lg"] } },
+      "AvatarGroup": { "setKey": "b11f77c02a2bcdaa4c1d73d9909408510284662a", "variants": { "Dir": ["LTR", "RTL"] } }
+    },
+    "Spinner": { "setKey": "e4f57c11398523e5167ea4a2536120e4ae35b1ac", "variants": { "Size": ["size-3", "size-4", "size-5", "size-6"] } },
+    "Native Select": {
+      "NativeSelect": { "setKey": "e35ba4b23c849faf4792df65703af731f2a62a13", "variants": { "State": ["Default", "Focus", "Disabled", "Destructive"], "Dir": ["LTR", "RTL"] }, "text": "Text > Native Select" },
+      "NativeSelectLabel": { "setKey": "8eedfc11f093371a4afc0395cf53292d8c66a817", "variants": { "Text alignment": ["Left", "Right"] } },
+      "NativeSelectOption": { "setKey": "419b73d250524d3f03021c7ceb2b21454b86b1bd", "variants": { "Text alignment": ["Right", "Left"] } }
+    },
+    "Chart bars": {
+      "note": "The kit's Bar chart pages draw bars as plain frames filled with chart-1..5; there is no bar component. Bars here use SliderTrack/SliderRange (Orientation=Vertical) instances so they stay library instances.",
+      "chartVariables": { "chart-1": "f01633eb929efd019c1d8d17441d2e38c910a8d6", "chart-2": "75c8f16c44a9782def1cbc37d169e59dd781632f", "chart-3": "184339a59804950cf1dae9840347463a250efa51", "chart-4": "0713965fa40a21716b24934e2aae1e9b9d581275", "chart-5": "a68a329299b27693192ce297ba1c2b27ac24cb48" }
+    },
+    "Kbd": { "key": "7614db155cb71040d097d3c838857b8f1945dff8" }
+  },
+  "icons": {
+    "plus": "c415efc3bfd6b90dfdd36ece15276549606cfe30",
+    "file-text": "4d99fc808e5c985b740ddf0fea70590b683e8b1c",
+    "camera": "eabeb2d6ea5f94221599264e98bbcbfb35b49410",
+    "mail": "84a112623b9fece2bcd46ab890abe658b187b2a6",
+    "plug": "cde2374dfc6c146e3edb8f92c0980999418f6083",
+    "circle-check": "4fcde8356ffeb3749380ca73dc385c4188280ea7",
+    "check": "1c37235447ddac4a69aab993a536743f1b16d96f",
+    "chevron-right": "f050f05fc38650d3503b852ac0b1d907a27fa6ff",
+    "chevron-left": "3f96be810e80d0bb4506ab67655e1a6d579be44b",
+    "chevron-down": "bccdbea1b961aeaa004ffe0b6ae087054dbb429d",
+    "arrow-left": "d49ca8248b8307fd2abca81801b8f30584c9f593",
+    "triangle-alert": "43f628c7dca7be4788e16948f98969ec3c06f9b9",
+    "message-circle": "a71ceecafc657713bd20cf2786c55076c849af3e",
+    "link": "6e40c8d359b72e5b91ca203fec4e12fc67c686e4",
+    "receipt": "4b84619c293381a33f1c25b3b56dc335e2374b83",
+    "chart-line": "7c3752a2c5a388f60ab2faa28e506a98a823ecdc",
+    "_chart-line-note": "the kit uses the older Lucide name lucide/line-chart for chart-line",
+    "signal": "e2de4ccf28816553330873077168232874dfd429",
+    "wifi": "4050e257df4dd59c278ffaa167da5248739e03f4",
+    "battery-full": "1143fd5f7fd15f80599d540e966ca42234fa5b55",
+    "loader-circle": "9ff9f7d3662408497571fb2be52fcb50722c3986",
+    "x": "af7ca0cb001cf8163e3924e6a41bfb77a671e25b",
+    "copy": "af406fb0086ad4d2cf4dda1b39306c9961927666",
+    "share-2": "655c6d1696664d3fcc119e2795d30cfb485c9383",
+    "info": "2e14764018f1910c482378c26a108db5b6306476",
+    "landmark": "62188711500dcf64d3a8348998b4f2a6a865b1cf",
+    "shield-check": "e7c553302dbcc4834308e140e30338725cf75b36",
+    "lock": "fe58baf85db85a388c4f499ecdb6cadc0fcf3ff7",
+    "trending-up": "0122d62c6764ef78d495e5e837e828011cc1ae3e",
+    "arrow-up": "5f934636c8c2a286e9a5e78f21f135d58e85cc03",
+    "bell": "8654411ea29bf26e560cc53b64d96dc76e52ccda",
+    "zap": "242b17fc484e79c05356f4ab8aa1cf586b3a847c"
+  },
+  "variables": {
+    "_collection": "mode (modes: light mode, dark mode)",
+    "primary": "7e78504957ccc4dc7f244b30b8e98df157ab1a69",
+    "ring": "09d2c42060fa5f443accc27909915fd0f7a80a32",
+    "foreground": "5cd9204d09206faba99f1f08b01bc04ac000f622",
+    "card-foreground": "85025d747f47aae8834390f3959029987b027a9a",
+    "muted-foreground": "c97975bda1d3655822a1c7bee0034626bf3302d0",
+    "border": "2638a6a4d9a449321f543c5770e7c001c7494b6f",
+    "input": "a051b29777bf6dd5a006367cbc572602ce051e53",
+    "muted": "c364e054c122d81a87e151dc2022e4de51586079",
+    "secondary": "fdfd8dcd3c7a9561bdc54e3b21310a86fbecfcb8",
+    "_kept_library": "not swapped by the rebrand pass",
+    "background": "455a2067fd8c30790e55518dbefb1bee1ecc0091",
+    "card": "26fb1d152529a634c6c3ced96335007b8217cd79",
+    "popover": "0a1ef609cc893e158a60f254c812e88c5fa4e1e1",
+    "primary-foreground": "8e876f508090f15d12ac65631282d39e6c59cc92",
+    "secondary-foreground": "7a1a89c0a142524b8cb4226b94a76398bf83055c",
+    "accent": "09e99ae3636bb83a31414bea8542ae00e5cb0922",
+    "accent-foreground": "656dd39af7a7c0963a912ea7243a4d0656d6892e",
+    "destructive": "3c647218a0d10929c010a413145cfd9eaa738aed",
+    "destructive-subtle": "2ae01dd233b3071b4917bc393faff06fd205d295",
+    "text-destructive": "06c3cee7cb52309ad73ef98e43b8b743b6c5dee1"
+  },
+  "rebrandMap": {
+    "primary": "brand/primary",
+    "ring": "brand/primary",
+    "foreground": "brand/ink",
+    "card-foreground": "brand/ink",
+    "muted-foreground": "brand/ink-muted",
+    "border": "brand/line",
+    "input": "brand/line",
+    "muted": "brand/surface-muted",
+    "secondary": "brand/surface-muted"
+  },
+  "textStyles": {
+    "_about": "Library text styles, all Inter, tracking normal. Names are Text-<size>/<weight>. Ramp: xs 12/16, sm 14/20, base 16/24, lg 18/28, xl 20/28, 2xl 24/32, 3xl 30/36, 4xl 36/40, 5xl 48/48.",
+    "Text-xs/Regular": "4d9e8762ae816ecb46d808cbc961c5b4715a1d95",
+    "Text-xs/Medium": "bf7a926b14fcc02c3c95ba267468597c263f6b13",
+    "Text-xs/Semi Bold": "0f4b9646d905dc0f89df51f364f05398551f3b59",
+    "Text-sm/Regular": "2d4fdc8efd42199d03ae7f3b36058d1faf20a2f4",
+    "Text-sm/Medium": "3c0ae7eabbc3920636098da0ac4b8b02c9cd6d3d",
+    "Text-sm/Semi Bold": "a32e7416f7fc6eeac0a0c8d6810803f09c1d0719",
+    "Text-base/Regular": "2d0c99d17981c1579557f3d186803570481ba6d2",
+    "Text-base/Medium": "8fd09997d5e85ed017358919191a52db07ead1f6",
+    "Text-base/Semi Bold": "1ead2f35a8b9486568f3cb40ae23984998885f0b",
+    "Text-lg/Medium": "57265c74b5aac51159c06fbf3be9b44f46d5b347",
+    "Text-lg/Semi Bold": "22179fb2454ebeaea2f86fe8688b3980c7db858a",
+    "Text-xl/Semi Bold": "a47832e77d0db8be7087f42e81d121d9c0df6389",
+    "Text-2xl/Semi Bold": "e62e80afb76cf7f5c9777ebbb1f1fb6b4c0bfe95",
+    "Text-2xl/Bold": "38d70d6022f1b699e270e502331f805ca526b31b",
+    "Text-3xl/Semi Bold": "4ccc5f135c2df788022b41c37247f5d8a0249f37",
+    "Text-3xl/Bold": "35aa8259aaa2529209d6f564e10917b4b9fb6c52",
+    "Text-4xl/Semi Bold": "1e2a2880d3a988a0278e47c73e58b3a48713ee8c",
+    "Text-4xl/Bold": "a9cb433dadf1e5ee65ea6b284176f4a702bc40c1",
+    "Text-5xl/Semi Bold": "2d6e5bb98d79308ef36fb0f34022baac75abc521",
+    "Text-6xl/Semi Bold": "e1b8c34c71fff11cdc4c739b226f3ce6b467ea0d"
+  }
+}

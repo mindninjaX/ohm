@@ -1,0 +1,14 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="State=Checked, Size=L, Tile=Off">
+<rect id="Paper" x="8.5" y="3.5" width="31" height="41" rx="4.5" fill="white" stroke="#DCDFE4"/>
+<rect id="Accent" x="12.7998" y="7.84613" width="6.4" height="6.46154" rx="1.6" fill="#265CFF"/>
+<rect id="Line 1" x="22.3999" y="9.13849" width="12.8" height="4.03846" rx="2.01923" fill="#DCDFE4"/>
+<rect id="Line 2" x="12.7998" y="18.3461" width="19.2" height="4.03846" rx="2.01923" fill="#DCDFE4"/>
+<rect id="Line 3" x="12.7998" y="26.4231" width="14.4" height="4.03846" rx="2.01923" fill="#DCDFE4"/>
+<circle id="Ring" cx="36.5" cy="36.5" r="11.5" fill="white"/>
+<circle id="Badge" cx="36.5" cy="36.5" r="9.5" fill="#DCFFF1"/>
+<g id="Tick">
+<path id="Vector" d="M40.5 33.5L35 39L32.5 36.5" stroke="#216E4E" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+</svg>

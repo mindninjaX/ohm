@@ -1,0 +1,15 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Size=Large">
+<rect width="1024" height="1024" rx="229" fill="#265CFF"/>
+<g id="Page">
+<rect x="256" y="180" width="512" height="664" rx="88" fill="white"/>
+<rect id="Bolt tile" x="328" y="252" width="200" height="200" rx="52" fill="#E9EFFF"/>
+<path id="Bolt" d="M443.415 291.587C443.598 286.727 437.437 284.494 434.463 288.343L382.226 355.943C379.686 359.229 382.029 364 386.182 364H409.209C412.044 364 414.312 366.354 414.205 369.187L412.585 412.413C412.402 417.273 418.563 419.506 421.537 415.657L473.774 348.057C476.314 344.771 473.971 340 469.818 340H446.791C443.956 340 441.688 337.646 441.795 334.813L443.415 291.587Z" fill="#265CFF"/>
+<rect id="Line 1" x="560" y="328" width="120" height="48" rx="24" fill="#DCDFE4"/>
+<rect id="Line 2" x="328" y="500" width="368" height="48" rx="24" fill="#DCDFE4"/>
+<rect id="Line 3" x="328" y="580" width="240" height="48" rx="24" fill="#DCDFE4"/>
+<rect id="Line 4" x="328" y="740" width="200" height="48" rx="24" fill="#DCDFE4"/>
+<rect id="Scan line" x="288" y="670" width="448" height="28" rx="14" fill="#265CFF"/>
+</g>
+</g>
+</svg>

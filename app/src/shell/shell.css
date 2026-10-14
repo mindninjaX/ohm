@@ -1,0 +1,137 @@
+/*
+  The shell: page, phone frame, safe areas. Plain CSS (no Tailwind directives) so the rules
+  hold whatever the utilities do. Imported by components/MobileFrame.tsx.
+*/
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+html,
+body {
+  margin: 0;
+  overflow: hidden;
+  overscroll-behavior: none;
+  background: var(--surface-muted);
+}
+
+/* ------------------------------------------------------------------ the page */
+.ohm-page {
+  position: relative;
+  display: flex;
+  height: 100dvh;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--surface-muted);
+}
+
+/* Desktop: a soft backdrop, then the frame with its side column. */
+.ohm-page[data-framed="true"] {
+  gap: 72px;
+  background:
+    radial-gradient(60rem 40rem at 18% 12%, color-mix(in srgb, var(--primary-subtle) 80%, transparent), transparent 70%),
+    radial-gradient(50rem 36rem at 92% 100%, color-mix(in srgb, var(--primary-subtle) 55%, transparent), transparent 72%),
+    var(--surface-muted);
+}
+
+/* Takes the scaled size of the device so the page layout matches what is drawn. */
+.ohm-scaler {
+  position: relative;
+  flex: none;
+  width: 100%;
+  height: 100%;
+}
+.ohm-page[data-framed="true"] .ohm-scaler {
+  width: auto;
+  height: auto;
+}
+
+.ohm-device {
+  transform-origin: top left;
+  width: 100%;
+  height: 100%;
+}
+
+/* The bezel: thin and dark, with a soft shadow and a faint inner rim. */
+.ohm-page[data-framed="true"] .ohm-device {
+  box-sizing: border-box;
+  padding: 8px;
+  border-radius: 56px;
+  background: #0b1020;
+  box-shadow:
+    0 0 0 1px #2a3045,
+    inset 0 0 0 1px #1c2236,
+    0 40px 80px -24px rgb(9 30 66 / 0.38),
+    0 12px 28px -8px rgb(9 30 66 / 0.18);
+}
+
+/* ------------------------------------------------------------------ the app area */
+.ohm-frame {
+  /* Phone: the real status bar and safe areas. Never less than 16px at the bottom. */
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: max(env(safe-area-inset-bottom, 0px), 16px);
+
+  position: relative;
+  width: 100%;
+  height: 100dvh;
+  max-width: 480px;
+  margin: 0 auto;
+  overflow: hidden;
+  isolation: isolate;
+  /* Makes position: fixed inside the app fixed to the phone, not the page. */
+  transform: translateZ(0);
+  background: var(--surface-muted);
+  color: var(--ink);
+}
+
+/* A wide touch screen (a tablet) keeps a phone-width column with a hairline each side. */
+@media (min-width: 481px) {
+  .ohm-frame[data-framed="false"] {
+    box-shadow: 0 0 0 1px var(--line);
+  }
+}
+
+.ohm-frame[data-framed="true"] {
+  /* The drawn status bar is 62 tall and the home indicator zone is 34. */
+  --safe-top: 62px;
+  --safe-bottom: 34px;
+
+  width: 393px;
+  height: 852px;
+  max-width: none;
+  margin: 0;
+  border-radius: 48px;
+}
+
+/* Screens, then (in the frame) the status bar, then overlays, then the home indicator. */
+.ohm-stage {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.ohm-portal {
+  position: absolute;
+  inset: 0;
+  z-index: 50;
+  /* Empty space does not block the screens; overlays turn pointer events back on. */
+  pointer-events: none;
+}
+/* pointer-events is inherited, so turn it back on for everything portaled into the layer (sheet
+   scrim and panel, Radix popper wrappers, the base sheet root, Sonner). Empty space between them
+   stays click-through because the layer itself is none. */
+.ohm-portal > * {
+  pointer-events: auto;
+}
+
+/* Insets for the status bar and home indicator: .pt-safe on a top bar, .pb-safe on a bottom bar. */
+.pt-safe {
+  padding-top: var(--safe-top);
+}
+.pb-safe {
+  padding-bottom: var(--safe-bottom);
+}

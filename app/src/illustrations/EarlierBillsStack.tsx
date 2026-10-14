@@ -1,0 +1,47 @@
+/**
+ * A stack of earlier bill pages on a soft blue disc (empty note on All bills). 160 x 104.
+ * Exported from the Figma file "Bill app" (Foundations page), colours mapped to the brand CSS variables.
+ * Static: no motion.
+ */
+import { Svg, useUid, type IllustrationProps } from './svg';
+
+/** Figma 11:10094. */
+export function EarlierBillsStack(props: IllustrationProps) {
+  const u = useUid();
+  return (
+    <Svg w={160} h={104} {...props}>
+      <defs>
+        <clipPath id={`${u}-d0`}>
+          <rect width="9" height="9" fill="var(--card)" transform="translate(58.5 16.5)" />
+        </clipPath>
+      </defs>
+      <g data-part="earlier-bills-stack">
+        <circle data-part="tint" cx="80" cy="52" r="52" fill="var(--primary-subtle)" fillOpacity="0.6" />
+        <g data-part="back-page-2">
+          <rect x="14.6211" y="11.271" width="64" height="84" rx="10" transform="rotate(-8 14.6211 11.271)" fill="var(--surface-muted)" fillOpacity="0.6" />
+          <rect x="15.1858" y="11.6966" width="63" height="83" rx="9.5" transform="rotate(-8 15.1858 11.6966)" stroke="var(--line)" strokeOpacity="0.6" />
+        </g>
+        <g data-part="back-page-1">
+          <rect x="31.7519" y="8.90073" width="63" height="83" rx="9.5" transform="rotate(-4 31.7519 8.90073)" fill="var(--surface-muted)" />
+          <rect x="31.7519" y="8.90073" width="63" height="83" rx="9.5" transform="rotate(-4 31.7519 8.90073)" stroke="var(--line)" />
+        </g>
+        <g data-part="front-page">
+          <rect x="48.5" y="6.5" width="63" height="83" rx="9.5" fill="var(--card)" />
+          <rect x="48.5" y="6.5" width="63" height="83" rx="9.5" stroke="var(--line)" />
+          <rect data-part="zap-tile" x="56" y="14" width="14" height="14" rx="4" fill="var(--primary-subtle)" />
+          <g data-part="lucide-zap" clipPath={`url(#${u}-d0)`}>
+            <path d="M59.9998 21.75C59.9289 21.7502 59.8593 21.7303 59.7992 21.6926C59.7391 21.6549 59.6909 21.6009 59.6603 21.5369C59.6296 21.4729 59.6178 21.4015 59.6261 21.331C59.6345 21.2605 59.6626 21.1939 59.7073 21.1388L63.4198 17.3138C63.4477 17.2816 63.4856 17.2599 63.5274 17.2521C63.5693 17.2444 63.6125 17.2511 63.65 17.2712C63.6875 17.2912 63.717 17.3235 63.7338 17.3625C63.7506 17.4016 63.7536 17.4452 63.7423 17.4863L63.0223 19.7437C63.0011 19.8006 62.994 19.8617 63.0015 19.9219C63.0091 19.9821 63.0312 20.0395 63.0658 20.0893C63.1005 20.1391 63.1467 20.1797 63.2005 20.2077C63.2544 20.2357 63.3142 20.2502 63.3748 20.25H65.9998C66.0708 20.2498 66.1404 20.2697 66.2005 20.3074C66.2606 20.3451 66.3087 20.3991 66.3394 20.4631C66.37 20.5271 66.3818 20.5985 66.3735 20.669C66.3652 20.7395 66.337 20.8061 66.2923 20.8613L62.5798 24.6862C62.552 24.7184 62.514 24.7401 62.4722 24.7478C62.4304 24.7556 62.3872 24.7489 62.3497 24.7288C62.3122 24.7088 62.2826 24.6765 62.2658 24.6375C62.249 24.5984 62.246 24.5548 62.2573 24.5138L62.9773 22.2563C62.9985 22.1994 63.0057 22.1383 62.9981 22.0781C62.9905 22.0179 62.9684 21.9605 62.9338 21.9107C62.8991 21.8609 62.8529 21.8203 62.7991 21.7923C62.7453 21.7643 62.6855 21.7498 62.6248 21.75H59.9998Z" stroke="var(--primary)" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round" />
+          </g>
+          <rect data-part="bar-1" x="74" y="19" width="30" height="4" rx="2" fill="var(--surface-muted)" />
+          <rect data-part="bar-2" x="56" y="36" width="48" height="4" rx="2" fill="var(--surface-muted)" />
+          <rect data-part="bar-3" x="56" y="46" width="32" height="4" rx="2" fill="var(--surface-muted)" />
+          <rect data-part="amount-block" x="56" y="62" width="48" height="12" rx="4" fill="var(--surface-muted)" />
+        </g>
+        <circle data-part="badge" cx="112" cy="90" r="12" fill="var(--success-subtle)" stroke="var(--card)" strokeWidth="2" />
+        <g data-part="tick">
+          <path d="M116 87L110.5 92.5L108 90" stroke="var(--success)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        </g>
+      </g>
+    </Svg>
+  );
+}

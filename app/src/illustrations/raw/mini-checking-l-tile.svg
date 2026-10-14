@@ -1,0 +1,17 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="State=Checking, Size=L, Tile=On">
+<rect id="Tile" width="48" height="48" rx="13" fill="#E9EFFF"/>
+<rect id="Paper" x="8" y="4" width="27" height="35" rx="5" fill="white"/>
+<rect id="Scan band" x="8" y="14.7692" width="27" height="6.73077" fill="#E9EFFF"/>
+<rect id="Accent" x="12.0498" y="8.03845" width="5.4" height="5.38462" rx="1.35" fill="#265CFF"/>
+<rect id="Line 1" x="20.1499" y="9.11536" width="10.8" height="3.36538" rx="1.68269" fill="#DCDFE4"/>
+<rect id="Line 2" x="12.0498" y="16.7885" width="16.2" height="3.36538" rx="1.68269" fill="#DCDFE4"/>
+<rect id="Line 3" x="12.0498" y="23.5192" width="12.15" height="3.36538" rx="1.68269" fill="#DCDFE4"/>
+<rect id="Scan line" x="3.9502" y="17.4615" width="35.1" height="2.01923" rx="1.00962" fill="#265CFF"/>
+<circle id="Ring" cx="36.5" cy="36.5" r="11.5" fill="white"/>
+<circle id="Badge" cx="36.5" cy="36.5" r="9" fill="white" stroke="#DCDFE4"/>
+<g id="Spinner">
+<path id="Vector" d="M41 36.5C41 37.4503 40.6991 38.3762 40.1405 39.1449C39.5819 39.9137 38.7942 40.4859 37.8904 40.7796C36.9866 41.0732 36.0131 41.0732 35.1093 40.7795C34.2055 40.4858 33.4179 39.9135 32.8594 39.1447C32.3008 38.3759 32 37.45 32 36.4997C32 35.5494 32.3009 34.6235 32.8594 33.8547C33.418 33.0859 34.2056 32.5137 35.1094 32.22C36.0132 31.9263 36.9867 31.9263 37.8905 32.22" stroke="#265CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+</svg>

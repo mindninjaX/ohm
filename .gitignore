@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.DS_Store
+*.log
+app/test-results/
+app/playwright-report/
+app/tests/visual/out/
+.env*
+# Private deck preparation (past assignments, research, real sample bill) stays local
+specs/deck/
+specs/round1/journey-map.md

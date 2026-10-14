@@ -1,0 +1,13 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="State=Flagged, Size=L, Tile=On">
+<rect id="Tile" width="48" height="48" rx="13" fill="#E9EFFF"/>
+<rect id="Paper" x="8" y="4" width="27" height="35" rx="5" fill="white"/>
+<rect id="Accent" x="12.0498" y="8.03845" width="5.4" height="5.38462" rx="1.35" fill="#265CFF"/>
+<rect id="Line 1" x="20.1499" y="9.11536" width="10.8" height="3.36538" rx="1.68269" fill="#DCDFE4"/>
+<rect id="Line 2" x="11.0498" y="15.9423" width="18.2" height="5.05769" rx="1.5" fill="#FFF7D6" stroke="#A54800"/>
+<rect id="Line 3" x="12.0498" y="23.5192" width="12.15" height="3.36538" rx="1.68269" fill="#DCDFE4"/>
+<circle id="Ring" cx="36.5" cy="36.5" r="11.5" fill="white"/>
+<circle id="Badge" cx="36.5" cy="36.5" r="9.5" fill="#FFF7D6"/>
+<text id="Mark" fill="#A54800" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="12" font-weight="600" letter-spacing="0px"><tspan x="34.6484" y="40.8636">!</tspan></text>
+</g>
+</svg>

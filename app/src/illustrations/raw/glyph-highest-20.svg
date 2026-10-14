@@ -1,0 +1,7 @@
+<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Kind=Highest, Size=20">
+<path id="Bar left" d="M2 11.5C2 10.6716 2.67157 10 3.5 10H4.5C5.32843 10 6 10.6716 6 11.5V18H2V11.5Z" fill="#8590A2"/>
+<path id="Bar middle" d="M8 3.5C8 2.67157 8.67157 2 9.5 2H10.5C11.3284 2 12 2.67157 12 3.5V18H8V3.5Z" fill="#091E42"/>
+<path id="Bar right" d="M14 9.5C14 8.67157 14.6716 8 15.5 8H16.5C17.3284 8 18 8.67157 18 9.5V18H14V9.5Z" fill="#8590A2"/>
+</g>
+</svg>

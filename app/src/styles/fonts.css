@@ -1,0 +1,16 @@
+/*
+  Inter 3.19, the variable build (weight 100 to 900): the font the Figma file renders ("Inter" in
+  Figma is this build), so text lays out and draws like the Figma frames. Measured 14 Oct 2026
+  against 2x Figma exports: with this file and the browser's default font features, text matches
+  Figma to within a few pixels per line. Inter 4.x (what @fontsource-variable/inter ships) draws
+  and spaces some letters differently (hundreds of pixels per line), and so does turning on
+  features such as cv11 or ss01, which Figma does not use. Keep the family name: the theme's
+  --font-sans starts with "Inter Variable". License: Inter-OFL.txt next to the font.
+*/
+@font-face {
+  font-family: "Inter Variable";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../assets/fonts/Inter-3.19-roman.var.woff2") format("woff2");
+}

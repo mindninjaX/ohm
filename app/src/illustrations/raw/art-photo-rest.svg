@@ -1,0 +1,28 @@
+<svg width="150" height="96" viewBox="0 0 150 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Pose=Rest">
+<g id="paper">
+<rect x="54.7121" y="16.2052" width="47" height="59" rx="4.5" transform="rotate(6 54.7121 16.2052)" fill="white"/>
+<rect x="54.7121" y="16.2052" width="47" height="59" rx="4.5" transform="rotate(6 54.7121 16.2052)" stroke="#DCDFE4"/>
+<g id="mark">
+<rect x="59.6069" y="22.25" width="10" height="10" rx="3" transform="rotate(6 59.6069 22.25)" fill="#E9EFFF"/>
+<g id="zap" clip-path="url(#clip0_11_9898)">
+<path id="Vector" d="M61.6751 28.0815C61.6202 28.0759 61.568 28.0548 61.5246 28.0208C61.4812 27.9867 61.4483 27.941 61.4298 27.889C61.4113 27.837 61.408 27.7808 61.4201 27.727C61.4323 27.6732 61.4595 27.6239 61.4986 27.5849L64.6812 24.928C64.7054 24.9054 64.7365 24.8917 64.7695 24.8891C64.8025 24.8865 64.8353 24.8952 64.8627 24.9138C64.8901 24.9324 64.9103 24.9597 64.9201 24.9913C64.9299 25.0229 64.9287 25.0569 64.9167 25.0877L64.1762 26.7753C64.1552 26.8176 64.1447 26.8643 64.1456 26.9114C64.1466 26.9586 64.159 27.0048 64.1818 27.0462C64.2045 27.0875 64.237 27.1227 64.2763 27.1487C64.3157 27.1747 64.3608 27.1908 64.4077 27.1956L66.4382 27.409C66.4931 27.4146 66.5453 27.4356 66.5887 27.4697C66.6321 27.5038 66.665 27.5495 66.6835 27.6015C66.702 27.6535 66.7053 27.7097 66.6932 27.7635C66.681 27.8173 66.6538 27.8666 66.6147 27.9056L63.4321 30.5625C63.4079 30.5851 63.3768 30.5988 63.3438 30.6014C63.3109 30.604 63.278 30.5952 63.2506 30.5767C63.2232 30.5581 63.203 30.5308 63.1932 30.4992C63.1834 30.4676 63.1846 30.4336 63.1967 30.4028L63.9371 28.7151C63.9582 28.6729 63.9686 28.6262 63.9677 28.579C63.9667 28.5319 63.9543 28.4856 63.9315 28.4443C63.9088 28.403 63.8763 28.3678 63.837 28.3418C63.7976 28.3158 63.7525 28.2997 63.7056 28.2949L61.6751 28.0815Z" stroke="#265CFF" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+<rect id="title-line" x="73.2168" y="26.6969" width="18" height="4" rx="2" transform="rotate(6 73.2168 26.6969)" fill="#DCDFE4"/>
+<rect id="line-1" x="57.8301" y="39.1568" width="34" height="4" rx="2" transform="rotate(6 57.8301 39.1568)" fill="#DCDFE4"/>
+<rect id="line-2" x="57.0981" y="46.1185" width="26" height="4" rx="2" transform="rotate(6 57.0981 46.1185)" fill="#DCDFE4"/>
+<rect id="block" x="56.2622" y="54.0747" width="36" height="10" rx="3" transform="rotate(6 56.2622 54.0747)" fill="#F1F2F4"/>
+<rect id="line-3" x="54.7988" y="67.998" width="20" height="4" rx="2" transform="rotate(6 54.7988 67.998)" fill="#DCDFE4"/>
+</g>
+<path id="tl" d="M37.75 20.75V13.75C37.75 11.75 38.75 10.75 40.75 10.75H47.75" stroke="#265CFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="tr" d="M102.25 10.75H109.25C111.25 10.75 112.25 11.75 112.25 13.75V20.75" stroke="#265CFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="bl" d="M37.75 75.25V82.25C37.75 84.25 38.75 85.25 40.75 85.25H47.75" stroke="#265CFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="br" d="M102.25 85.25H109.25C111.25 85.25 112.25 84.25 112.25 82.25V75.25" stroke="#265CFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<clipPath id="clip0_11_9898">
+<rect width="7" height="7" fill="white" transform="translate(60.9419 23.8986) rotate(6)"/>
+</clipPath>
+</defs>
+</svg>

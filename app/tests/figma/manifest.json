@@ -1,0 +1,342 @@
+{
+  "S01": {
+    "nodeId": "9:7427",
+    "frameName": "S01 Home",
+    "figmaWidth": "393",
+    "figmaHeight": "1121",
+    "pngWidth": 786,
+    "pngHeight": 2242,
+    "bytes": 120731,
+    "exportedAt": "2026-10-14T17:48:20+0530"
+  },
+  "S01-1": {
+    "nodeId": "11:11635",
+    "frameName": "S01.1 All bills",
+    "figmaWidth": "393",
+    "figmaHeight": "852",
+    "pngWidth": 786,
+    "pngHeight": 1704,
+    "bytes": 87730,
+    "exportedAt": "2026-10-14T17:48:28+0530"
+  },
+  "S01-2": {
+    "nodeId": "11:12124",
+    "frameName": "S01.2 July bill",
+    "figmaWidth": "393",
+    "figmaHeight": "852",
+    "pngWidth": 786,
+    "pngHeight": 1704,
+    "bytes": 62316,
+    "exportedAt": "2026-10-14T17:48:28+0530"
+  },
+  "S01-3": {
+    "nodeId": "11:12484",
+    "frameName": "S01.3 Where these numbers come from",
+    "figmaWidth": "393",
+    "figmaHeight": "852",
+    "pngWidth": 786,
+    "pngHeight": 1704,
+    "bytes": 68489,
+    "exportedAt": "2026-10-14T17:48:29+0530"
+  },
+  "S01-4": {
+    "nodeId": "30:80509",
+    "frameName": "S01.4 Home, after paying",
+    "figmaWidth": "393",
+    "figmaHeight": "1121",
+    "pngWidth": 786,
+    "pngHeight": 2242,
+    "bytes": 119251,
+    "exportedAt": "2026-10-14T17:48:28+0530"
+  },
+  "S02": {
+    "nodeId": "9:7470",
+    "frameName": "S02 Notification",
+    "figmaWidth": "393",
+    "figmaHeight": "852",
+    "pngWidth": 786,
+    "pngHeight": 1704,
+    "bytes": 1458043,
+    "exportedAt": "2026-10-14T17:48:36+0530"
+  },
+  "S03": {
+    "nodeId": "9:7475",
+    "frameName": "S03 Add a bill",
+    "figmaWidth": "393",
+    "figmaHeight": "852",
+    "pngWidth": 786,
+    "pngHeight": 1704,
+    "bytes": 97174,
+    "exportedAt": "2026-10-14T17:48:36+0530"
+  },
+  "S03-1": {
+    "nodeId": "11:10839",
+    "frameName": "S03.1 Forward the email",
+    "figmaWidth": "393",
+    "figmaHeight": "852",
+    "pngWidth": 786,
+    "pngHeight": 1704,
+    "bytes": 88472,
+    "exportedAt": "2026-10-14T17:48:36+0530"
+  },
+  "S04": {
+    "nodeId": "9:7521",
+    "frameName": "S04 Reading",
+    "figmaWidth": "393",
+    "figmaHeight": "852",
+    "pngWidth": 786,
+    "pngHeight": 1704,
+    "bytes": 83555,
+    "exportedAt": "2026-10-14T17:48:36+0530"
+  },
+  "S04-1": {
+    "nodeId": "20:28427",
+    "frameName": "S04.1 Reading details",
+    "figmaWidth": "393",
+    "figmaHeight": "2079",
+    "pngWidth": 786,
+    "pngHeight": 4158,
+    "bytes": 276129,
+    "exportedAt": "2026-10-14T17:48:36+0530"
+  },
+  "S04-2": {
+    "nodeId": "20:29031",
+    "frameName": "S04.2 Stop reading",
+    "figmaWidth": "393",
+    "figmaHeight": "852",
+    "pngWidth": 786,
+    "pngHeight": 1704,
+    "bytes": 84874,
+    "exportedAt": "2026-10-14T17:48:37+0530"
+  },
+  "S05": {
+    "nodeId": "9:7555",
+    "frameName": "S05 Your connection",
+    "figmaWidth": "393",
+    "figmaHeight": "1164",
+    "pngWidth": 786,
+    "pngHeight": 2328,
+    "bytes": 144720,
+    "exportedAt": "2026-10-14T17:48:37+0530"
+  },
+  "S05-0": {
+    "nodeId": "30:47962",
+    "frameName": "S05.0 Your connection, all rows open",
+    "figmaWidth": "393",
+    "figmaHeight": "2124",
+    "pngWidth": 786,
+    "pngHeight": 4248,
+    "bytes": 226794,
+    "exportedAt": "2026-10-14T17:48:37+0530"
+  },
+  "S05-1": {
+    "nodeId": "11:13504",
+    "frameName": "S05.1 What looks off",
+    "figmaWidth": "393",
+    "figmaHeight": "852",
+    "pngWidth": 786,
+    "pngHeight": 1704,
+    "bytes": 81566,
+    "exportedAt": "2026-10-14T17:48:37+0530"
+  },
+  "S05-2": {
+    "nodeId": "11:14760",
+    "frameName": "S05.2 On your bill",
+    "figmaWidth": "393",
+    "figmaHeight": "906",
+    "pngWidth": 786,
+    "pngHeight": 1812,
+    "bytes": 104680,
+    "exportedAt": "2026-10-14T17:48:37+0530"
+  },
+  "S05-3": {
+    "nodeId": "11:15450",
+    "frameName": "S05.3 Fix contract demand",
+    "figmaWidth": "393",
+    "figmaHeight": "852",
+    "pngWidth": 786,
+    "pngHeight": 1704,
+    "bytes": 64479,
+    "exportedAt": "2026-10-14T17:48:37+0530"
+  },
+  "S05-4": {
+    "nodeId": "11:15577",
+    "frameName": "S05.4 Ask the Ohm team",
+    "figmaWidth": "393",
+    "figmaHeight": "856",
+    "pngWidth": 786,
+    "pngHeight": 1712,
+    "bytes": 93801,
+    "exportedAt": "2026-10-14T17:48:37+0530"
+  },
+  "S05-8": {
+    "nodeId": "11:16230",
+    "frameName": "S05.8 Your connection, set by you",
+    "figmaWidth": "393",
+    "figmaHeight": "1258",
+    "pngWidth": 786,
+    "pngHeight": 2516,
+    "bytes": 169167,
+    "exportedAt": "2026-10-14T17:48:42+0530"
+  },
+  "S05-9": {
+    "nodeId": "11:15883",
+    "frameName": "S05.9 Your connection, sent",
+    "figmaWidth": "393",
+    "figmaHeight": "1258",
+    "pngWidth": 786,
+    "pngHeight": 2516,
+    "bytes": 168404,
+    "exportedAt": "2026-10-14T17:48:43+0530"
+  },
+  "S06": {
+    "nodeId": "9:7592",
+    "frameName": "S06 Bill summary",
+    "figmaWidth": "393",
+    "figmaHeight": "1569",
+    "pngWidth": 786,
+    "pngHeight": 3138,
+    "bytes": 176364,
+    "exportedAt": "2026-10-14T17:48:44+0530"
+  },
+  "S06-1": {
+    "nodeId": "20:31078",
+    "frameName": "S06.1 After Tue 8 Sep",
+    "figmaWidth": "393",
+    "figmaHeight": "1573",
+    "pngWidth": 786,
+    "pngHeight": 3146,
+    "bytes": 178999,
+    "exportedAt": "2026-10-14T17:48:44+0530"
+  },
+  "S07": {
+    "nodeId": "9:7654",
+    "frameName": "S07 Checks",
+    "figmaWidth": "393",
+    "figmaHeight": "2022",
+    "pngWidth": 786,
+    "pngHeight": 4044,
+    "bytes": 247854,
+    "exportedAt": "2026-10-14T17:48:44+0530"
+  },
+  "S08": {
+    "nodeId": "9:7679",
+    "frameName": "S08 Breakdown",
+    "figmaWidth": "393",
+    "figmaHeight": "1539",
+    "pngWidth": 786,
+    "pngHeight": 3078,
+    "bytes": 193668,
+    "exportedAt": "2026-10-14T17:48:44+0530"
+  },
+  "S08c": {
+    "nodeId": "20:30011",
+    "frameName": "S08c Breakdown, what a part means",
+    "figmaWidth": "393",
+    "figmaHeight": "1539",
+    "pngWidth": 786,
+    "pngHeight": 3078,
+    "bytes": 217830,
+    "exportedAt": "2026-10-14T17:48:44+0530"
+  },
+  "S09": {
+    "nodeId": "9:7722",
+    "frameName": "S09 Share",
+    "figmaWidth": "393",
+    "figmaHeight": "852",
+    "pngWidth": 786,
+    "pngHeight": 1704,
+    "bytes": 103761,
+    "exportedAt": "2026-10-14T17:48:44+0530"
+  },
+  "S09-1": {
+    "nodeId": "28:39051",
+    "frameName": "S09.1 Link copied (toast overlay)",
+    "figmaWidth": "393",
+    "figmaHeight": "852",
+    "pngWidth": 786,
+    "pngHeight": 1704,
+    "bytes": 44077,
+    "exportedAt": "2026-10-14T17:48:44+0530"
+  },
+  "S11": {
+    "nodeId": "9:7820",
+    "frameName": "S11 Paid",
+    "figmaWidth": "393",
+    "figmaHeight": "852",
+    "pngWidth": 786,
+    "pngHeight": 1704,
+    "bytes": 78967,
+    "exportedAt": "2026-10-14T17:48:44+0530"
+  },
+  "S11-1": {
+    "nodeId": "28:40406",
+    "frameName": "S11.1 Share receipt",
+    "figmaWidth": "393",
+    "figmaHeight": "852",
+    "pngWidth": 786,
+    "pngHeight": 1704,
+    "bytes": 93972,
+    "exportedAt": "2026-10-14T17:48:45+0530"
+  },
+  "S12": {
+    "nodeId": "9:7850",
+    "frameName": "S12 Trends",
+    "figmaWidth": "393",
+    "figmaHeight": "1543",
+    "pngWidth": 786,
+    "pngHeight": 3086,
+    "bytes": 151652,
+    "exportedAt": "2026-10-14T17:48:29+0530"
+  },
+  "S12-2": {
+    "nodeId": "20:25768",
+    "frameName": "S12.2 Trends, 2025",
+    "figmaWidth": "393",
+    "figmaHeight": "1543",
+    "pngWidth": 786,
+    "pngHeight": 3086,
+    "bytes": 153893,
+    "exportedAt": "2026-10-14T17:48:30+0530"
+  },
+  "S12-3": {
+    "nodeId": "20:26344",
+    "frameName": "S12.3 Trends, month selected (May)",
+    "figmaWidth": "393",
+    "figmaHeight": "1543",
+    "pngWidth": 786,
+    "pngHeight": 3086,
+    "bytes": 151961,
+    "exportedAt": "2026-10-14T17:48:30+0530"
+  },
+  "S12-4": {
+    "nodeId": "20:27101",
+    "frameName": "S12.4 Trends, Bill amount",
+    "figmaWidth": "393",
+    "figmaHeight": "1006",
+    "pngWidth": 786,
+    "pngHeight": 2012,
+    "bytes": 93121,
+    "exportedAt": "2026-10-14T17:48:31+0530"
+  },
+  "S12-5": {
+    "nodeId": "20:27573",
+    "frameName": "S12.5 Trends, Units with fewer than 3 months",
+    "figmaWidth": "393",
+    "figmaHeight": "852",
+    "pngWidth": 786,
+    "pngHeight": 1704,
+    "bytes": 57384,
+    "exportedAt": "2026-10-14T17:48:31+0530"
+  },
+  "S12-6": {
+    "nodeId": "20:27992",
+    "frameName": "S12.6 Trends, error",
+    "figmaWidth": "393",
+    "figmaHeight": "852",
+    "pngWidth": 786,
+    "pngHeight": 1704,
+    "bytes": 40708,
+    "exportedAt": "2026-10-14T17:48:31+0530"
+  }
+}

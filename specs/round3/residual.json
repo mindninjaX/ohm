@@ -1,0 +1,90 @@
+[
+ {
+  "area": "CHECKS",
+  "frame": "S04.1 Reading details",
+  "node": "20:28429 (Illustration / Bill), 20:28431 (Caption), 20:28433 (Ohm / Header), I20:28434;19:8444 (Footer Button 1)",
+  "severity": "medium",
+  "problem": "S04.1 now shows a finished reading (all 6 checks Pass, subtitle \"From your August bill\") but still has the reading spinner on the bill, \"Takes about 10 seconds… We will notify you when it is ready\" and \"Stop reading this bill\". Opened from S07 for a bill that is already checked, it offers to stop reading it and delete the file.",
+  "fix": "(await figma.getNodeByIdAsync('20:28429')).setProperties({Status:'Done', Scan:'None'}); (await figma.getNodeByIdAsync('20:28431')).setProperties({'Text#19:269':'Ohm finished reading this bill. All 6 checks are fine.'}); (await figma.getNodeByIdAsync('20:28433')).setProperties({'Title#19:98':'How Ohm read this bill'}); (await figma.getNodeByIdAsync('I20:28434;19:8444')).setProperties({'Label#19:6':'Done'}) and set its ON_CLICK to BACK (works from S04 and from S07). CANVAS: change label 30:79985 to \"State: reading done, every step open\" and label 30:79990 to \"From S04: Tap Stop reading this bill\" (S04's own button I20:26972;19:8444 already opens S04.2)."
+ },
+ {
+  "area": "HOME",
+  "frame": "S12.4 Trends, Bill amount",
+  "node": "Bar chart View=Rupees / 2026 30:57720 > Chart bar Jul 30:57730 > Bar I30:57730;19:8864",
+  "severity": "medium",
+  "problem": "The rupee bars don't start at zero. Jul (₹35,88,340) is 99 px tall and Aug (₹36,42,160) is 122 px, so a 1.5% rise looks like about 23% to a finance manager reading the chart.",
+  "fix": "(await figma.getNodeByIdAsync('I30:57730;19:8864')).resize(72,120) in the main 30:57720 (122 × 35,88,340 / 36,42,160 = 120). Then check that the S12.4 copy I30:58433;20:22962;30:57906;30:57730;19:8864 reads 120 and has no height override."
+ },
+ {
+  "area": "CANVAS",
+  "frame": "All four flow sections (30:66014, 30:66067, 30:66091, 30:66114)",
+  "node": "Purpose texts 30:79968, 30:80014, 30:80037, 30:80061",
+  "severity": "medium",
+  "problem": "The one line that says what each flow is for is ink-muted slate (#44546F) on the sections' dark grey fill (#444444), about 1.2:1 contrast. It can't be read at any zoom.",
+  "fix": "Set the fills of the four Purpose text nodes to solid white {r:1,g:1,b:1} (or bind them to primary-subtle VariableID:5:1254). Alternative: set the four section fills to white #FFFFFF (Figma's default), which also lifts the contrast of the blue arrows."
+ },
+ {
+  "area": "CHECKS",
+  "frame": "S04.1 Reading details",
+  "node": "Check No penalties I30:52610;20:23525;19:8501;30:75612;20:22662;30:80360 (and the same line in Steps card Open=All 20:23524)",
+  "severity": "low",
+  "problem": "The result wraps as \"Peak 664 of 700 kVA. Power factor\" / \"0.998.\", which leaves the value alone on line two, apart from its label.",
+  "fix": "setProperties({'Result#30:23':'Peak 664 of 700 kVA. Power factor 0.998.'}) on that instance and on the matching line in main 20:23524. It then breaks as \"Peak 664 of 700 kVA.\" / \"Power factor 0.998.\""
+ },
+ {
+  "area": "CHECKS",
+  "frame": "S07 Checks",
+  "node": "Content 20:22707 (Checks hero 20:22708)",
+  "severity": "low",
+  "problem": "The hero starts directly under the header (Content paddingTop 122 = header bottom 122). The cropped bill illustration therefore looks as if it slides under the header, while S04 and S06 leave a 16 to 24 px gap.",
+  "fix": "Set 20:22707 paddingTop to 138 (16 px gap, as on S04). The frame grows by 16."
+ },
+ {
+  "area": "SUMMARY",
+  "frame": "S08 Breakdown, S08c",
+  "node": "Content 20:29220 (S08), 20:30012 (S08c)",
+  "severity": "low",
+  "problem": "The Bill total card sits only 8 px under the header, against 24 px on S06, the screen that opens it.",
+  "fix": "Set paddingTop to 146 on 20:29220 and 20:30012 (header bottom 122 + 24)."
+ },
+ {
+  "area": "CHECKS",
+  "frame": "S07 Checks",
+  "node": "Check visual / Headroom 20:17399: Peak demand bar texts I30:76589;11:9962 / ;11:9963 (12 px) vs Power factor 20:17410 / 20:17411 (14 px)",
+  "severity": "low",
+  "problem": "The two label-value rows in the No penalties tile use different sizes: \"Peak demand 664 of 700 kVA\" is 12 px and \"Power factor (1 is best) 0.998\" is 14 px.",
+  "fix": "Apply the label's text style (from I30:76589;11:9962) to 20:17410 and the value's style (from I30:76589;11:9963) to 20:17411, so both rows are Text-xs like the shared Capacity bar."
+ },
+ {
+  "area": "HOME",
+  "frame": "S01.1 All bills",
+  "node": "30:74023 \"List row / August 2026\" (FRAME, detached)",
+  "severity": "low",
+  "problem": "The August row is a detached copy of List row. It looks right, but developers get a one-off layout (badge on its own line under the text) that no component describes.",
+  "fix": "Add a boolean \"Badge below\" (or a variant Layout=Badge below) to the List row main that puts the Badge under the text column. Swap 30:74023 back to an instance with Badge Success \"Save ₹32,970 by Tue 8 Sep\" and keep its ON_CLICK > NAVIGATE 9:7592."
+ },
+ {
+  "area": "CONNECTION",
+  "frame": "S05.8 Your connection, set by you; S05.9 Your connection, sent",
+  "node": "I28:44883;19:8345 (S05.8 Back), I28:45191;19:8345 (S05.9 Back)",
+  "severity": "low",
+  "problem": "Back on S05.8 and S05.9 jumps to S01 Home, while Back on S05 and S05.0 is BACK, so the same arrow behaves differently on the same screen.",
+  "fix": "Set ON_CLICK on I28:44883;19:8345 and I28:45191;19:8345 to action BACK."
+ },
+ {
+  "area": "CANVAS",
+  "frame": "3 · Home, past bills and trends; 1 · First bill",
+  "node": "Arrows 30:80044 (S01 to S01.3, S12), 30:79989 (S04.1 to S04.2), 30:79992 (S05.0 to S05.2, S05.1)",
+  "severity": "low",
+  "problem": "S01 and S04.1 grew 12 px and S05.0 grew 4 px, so these arrows now start inside their source frames and draw a blue stub over S01's tab bar and S04.1's footer.",
+  "fix": "Move each arrow's start vertex down to its frame's bottom edge and keep the end points: 30:80044 starts at y 1301, 30:79989 at y 3311, 30:79992 at y 3664 (section coordinates)."
+ },
+ {
+  "area": "CANVAS",
+  "frame": "3 · Home, past bills and trends",
+  "node": "Label 30:80053",
+  "severity": "low",
+  "problem": "The state pill says \"State: Bill amount\", but the tab on S12.4 is now labelled \"Bill total\".",
+  "fix": "Set the text in 30:80053 to \"State: Bill total\" and rename the node \"Label / State: Bill total\"."
+ }
+]

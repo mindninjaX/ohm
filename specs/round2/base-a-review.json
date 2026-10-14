@@ -1,0 +1,26 @@
+[
+ {
+  "frame": "Ohm / List row (19:9017), Leading visual",
+  "severity": "high",
+  "issue": "The nested `Leading visual` Icon tile is not an exposed instance (isExposedInstance is false). The row's swap property only picks the tile variant (Tone x Size). The glyph (receipt-indian-rupee, message-circle and so on) lives in the tile's own Icon swap property, and the row does not surface it. Past bills, S01.1, S01.2, S01.3, S05.1, S05.2 and S07 rows each need a different icon, so every use be",
+  "fix": "Set `isExposedInstance = true` on Leading visual in both List row variants, so the tile's Icon appears on the row and can be set through exposedInstances. Log the exposed name in the Built row."
+ },
+ {
+  "frame": "Icon tile (11:13337), Size=40 variants 19:8893, 19:8895, 19:8897, 19:8899",
+  "severity": "medium",
+  "issue": "The four new Size=40 variants have no property reference on their Icon layer. Size=36 variants have `Icon#11:86` bound to mainComponent. Size=40 variants have none, so the Icon property does nothing there. Anyone who uses List row Leading visual or Icon tile at 40 cannot change the icon through the property. The Built row says 'Icon swap prop unchanged', which is not true for these four. Tile fill",
+  "fix": "Bind the Icon instance in each Size=40 variant to the existing `Icon#11:86` swap property (componentPropertyReferences.mainComponent). Re-check that the stroke tokens (ink, primary, warning, success) survive."
+ },
+ {
+  "frame": "Ohm / Card (19:8514), Padding=None variants (and Ohm / Tile slot pattern)",
+  "severity": "medium",
+  "issue": "The Content slot is vertical with gap 12 in every Card variant, including Padding=None. Padding=None is the card meant for stacked List rows, Connection rows and Separators (Past bills, S01.1, S05 Details and Options cards). A 12 px gap would open space above and below each Separator, so downstream builders must override the slot's spacing per instance. That is the same drift the user complained a",
+  "fix": "Set the slot gap to 0 on the three Padding=None variants. The Padding 20 and 16 variants can keep 12. Note the change in Built."
+ },
+ {
+  "frame": "Ohm / Alert (19:8753)",
+  "severity": "medium",
+  "issue": "There is no Icon swap property, as the builder says. The S01.2 saved banner needs a piggy-bank icon, and S08b and S12.6 need other glyphs. Each of those must run `findOne('Icon').swapComponent(...)` on a nested layer, which is a sublayer edit and can be lost on a reset. Building the Success tone with a Custom icon would also be a near-duplicate.",
+  "fix": "Take the builder's own option: add a second variant dimension, `Icon = Default | Custom`. The Custom variants bind an Icon instance-swap property (default circle-check or info). Per-tone default icons stay in Default. Record it in Built."
+ }
+]

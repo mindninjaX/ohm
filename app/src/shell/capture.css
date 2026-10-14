@@ -1,0 +1,90 @@
+/*
+  Capture mode (?capture=1), see src/shell/capture.ts. Plain CSS, unlayered, so it wins over the
+  Tailwind utilities on the screen layers without raising specificity.
+*/
+
+html[data-capture],
+html[data-capture] body,
+html[data-capture] #root {
+  height: auto;
+  min-height: 0;
+  overflow: visible;
+  background: var(--surface-muted);
+}
+
+/* No animation or transition runs: every element is at its end state. (motion is skipped in JS.) */
+html[data-capture] *,
+html[data-capture] *::before,
+html[data-capture] *::after {
+  animation-duration: 0s !important;
+  animation-delay: 0s !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0s !important;
+  transition-delay: 0s !important;
+  scroll-behavior: auto !important;
+  caret-color: transparent !important;
+}
+html[data-capture] ::-webkit-scrollbar {
+  display: none;
+}
+
+/* The phone, drawn like the Figma frame: 393 wide, status bar 62, home indicator zone 34. */
+.ohm-capture {
+  --safe-top: 62px;
+  --safe-bottom: 34px;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 393px;
+  min-height: 852px;
+  margin: 0;
+  overflow: clip;
+  isolation: isolate;
+  /* Makes position: fixed inside the app fixed to this frame, as in the phone. */
+  transform: translateZ(0);
+  background: var(--surface-muted);
+  color: var(--ink);
+}
+
+/* Full-height screens: the layers flow in the page, so the frame is as tall as the content. */
+.ohm-capture[data-sheet="false"] > .ohm-stage {
+  position: relative;
+  inset: auto;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+}
+.ohm-capture[data-sheet="false"] [data-slot="screen-stage"] {
+  position: relative;
+  inset: auto;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  overflow: visible;
+}
+.ohm-capture[data-sheet="false"] [data-slot="screen-layer"] {
+  position: relative;
+  inset: auto;
+  flex: 1 1 auto;
+  overflow-x: clip;
+  overflow-y: visible;
+  transform: none !important;
+}
+
+/* Sticky headers, footers and tab bars would stick to the 852 px viewport, not to the full-height
+   page. In the frame they simply sit where the layout puts them: header first, footer last. */
+.ohm-capture[data-sheet="false"] .sticky {
+  position: relative !important;
+}
+
+/* A sheet: the Figma frame is the phone, 852 tall, with the screen behind it clipped. */
+.ohm-capture[data-sheet="true"] {
+  height: 852px;
+  min-height: 0;
+  overflow: hidden;
+}
+.ohm-capture[data-sheet="true"] [data-slot="screen-layer"] {
+  overflow-y: hidden;
+}

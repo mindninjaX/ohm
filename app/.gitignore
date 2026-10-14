@@ -1,0 +1,7 @@
+node_modules/
+dist/
+test-results/
+.env.local
+.env.*.local
+tests/visual/out/
+playwright-report/

@@ -1,0 +1,103 @@
+<svg width="246" height="140" viewBox="0 0 246 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Size=Compact, Focus=Maths, Status=Reading, Scan=None">
+<g id="Crop" clip-path="url(#clip0_20_18727)">
+<mask id="mask0_20_18727" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="240" height="128">
+<rect id="Fade mask" width="240" height="128" fill="url(#paint0_linear_20_18727)"/>
+</mask>
+<g mask="url(#mask0_20_18727)">
+<g id="Paper">
+<g id="Page">
+<rect x="16.5" y="-129.5" width="199" height="263" rx="13.5" fill="white"/>
+<rect x="16.5" y="-129.5" width="199" height="263" rx="13.5" stroke="#DCDFE4"/>
+<g id="D Usage strip">
+<rect id="D1 Caption" x="32" y="-3" width="48" height="4" rx="2" fill="#DCDFE4"/>
+<g id="D2 Usage bars">
+<rect id="D2 Bar 1" x="34" y="9.29004" width="8" height="18.7101" rx="2" fill="#DCDFE4"/>
+<rect id="D2 Bar 2" x="47" y="9.87598" width="8" height="18.124" rx="2" fill="#DCDFE4"/>
+<rect id="D2 Bar 3" x="60" y="9.34375" width="8" height="18.6564" rx="2" fill="#DCDFE4"/>
+<rect id="D2 Bar 4" x="73" y="10.9658" width="8" height="17.034" rx="2" fill="#DCDFE4"/>
+<rect id="D2 Bar 5" x="86" y="10.4893" width="8" height="17.5109" rx="2" fill="#DCDFE4"/>
+<rect id="D2 Bar 6" x="99" y="11.0264" width="8" height="16.9738" rx="2" fill="#DCDFE4"/>
+<rect id="D2 Bar 7" x="112" y="12.7275" width="8" height="15.2725" rx="2" fill="#DCDFE4"/>
+<rect id="D2 Bar 8" x="125" y="10.998" width="8" height="17.0018" rx="2" fill="#DCDFE4"/>
+<rect id="D2 Bar 9" x="138" y="9.55322" width="8" height="18.4466" rx="2" fill="#DCDFE4"/>
+<rect id="D2 Bar 10" x="151" y="8" width="8" height="20" rx="2" fill="#DCDFE4"/>
+<rect id="D2 Bar 11" x="164" y="8.5498" width="8" height="19.45" rx="2" fill="#DCDFE4"/>
+<rect id="D2 Bar 12" x="177" y="9.25146" width="8" height="18.7487" rx="2" fill="#DCDFE4"/>
+<rect id="D2 Bar 13" x="190" y="8.91797" width="8" height="19.0819" rx="2" fill="#265CFF"/>
+</g>
+</g>
+<g id="E Charges">
+<rect id="E Label 1" x="32" y="36" width="62" height="5" rx="2.5" fill="#F1F2F4"/>
+<rect id="E Amount 1" x="168" y="36" width="32" height="5" rx="2.5" fill="#DCDFE4"/>
+<rect id="E Label 2" x="32" y="45" width="50" height="5" rx="2.5" fill="#F1F2F4"/>
+<rect id="E Amount 2" x="174" y="45" width="26" height="5" rx="2.5" fill="#DCDFE4"/>
+<rect id="E Label 3" x="32" y="54" width="30" height="5" rx="2.5" fill="#F1F2F4"/>
+<rect id="E Amount 3" x="174" y="54" width="26" height="5" rx="2.5" fill="#DCDFE4"/>
+<rect id="E Label 4" x="32" y="63" width="40" height="5" rx="2.5" fill="#F1F2F4"/>
+<rect id="E Amount 4" x="174" y="63" width="26" height="5" rx="2.5" fill="#DCDFE4"/>
+</g>
+<g id="F Total payable">
+<rect id="F0 Total box" x="32" y="74" width="168" height="18" rx="5" fill="#E9EFFF"/>
+<rect id="F1 Label" x="38" y="80" width="44" height="6" rx="3" fill="#DCDFE4"/>
+<path id="F2 Rupee" d="M160.968 81.3251L160.741 82.1624H156.5L156.73 81.3251H160.968ZM158.836 86.2725L156.599 83.5815L156.596 82.8719H157.702C157.966 82.8719 158.186 82.8283 158.363 82.7409C158.542 82.6514 158.678 82.5268 158.769 82.367C158.863 82.205 158.91 82.0154 158.91 81.7981C158.91 81.4721 158.814 81.21 158.622 81.0119C158.43 80.8137 158.124 80.7146 157.702 80.7146H156.5L156.749 79.7271H157.702C158.239 79.7271 158.683 79.8101 159.034 79.9763C159.388 80.1404 159.652 80.3726 159.827 80.6731C160.004 80.9735 160.092 81.3251 160.092 81.7278C160.092 82.0836 160.027 82.4011 159.897 82.6802C159.767 82.9593 159.563 83.1883 159.284 83.3673C159.005 83.5463 158.639 83.6656 158.188 83.7253L158.149 83.7381L160.169 86.215V86.2725H158.836ZM160.974 79.7271L160.741 80.5772L157.302 80.5644L157.536 79.7271H160.974Z" fill="#265CFF"/>
+<rect id="F3 Amount" x="166" y="80" width="28" height="6" rx="3" fill="#DCDFE4"/>
+</g>
+<g id="G Tear-off slip">
+<line id="G0 Tear line" x1="16" y1="99.5" x2="216" y2="99.5" stroke="#DCDFE4" stroke-dasharray="3 3"/>
+<g id="G1 QR" opacity="0.45">
+<path d="M37.5 125.5H34.5V122.5H37.5V125.5Z" fill="#44546F"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M38 120C39.1046 120 40 120.895 40 122V126C40 127.105 39.1046 128 38 128H34C32.8954 128 32 127.105 32 126V122C32 120.895 32.8954 120 34 120H38ZM34 121.5C33.7239 121.5 33.5 121.724 33.5 122V126C33.5 126.276 33.7239 126.5 34 126.5H38C38.2761 126.5 38.5 126.276 38.5 126V122C38.5 121.724 38.2761 121.5 38 121.5H34Z" fill="#44546F"/>
+<path d="M46 126H43V123H46V126Z" fill="#44546F"/>
+<path d="M52 126H49V123H52V126Z" fill="#44546F"/>
+<path d="M46 120H43V117H46V120Z" fill="#44546F"/>
+<path d="M52 120H49V117H52V120Z" fill="#44546F"/>
+<path d="M45 115H42V112H45V115Z" fill="#44546F"/>
+<path d="M37.5 111.5H34.5V108.5H37.5V111.5Z" fill="#44546F"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M38 106C39.1046 106 40 106.895 40 108V112C40 113.105 39.1046 114 38 114H34C32.8954 114 32 113.105 32 112V108C32 106.895 32.8954 106 34 106H38ZM34 107.5C33.7239 107.5 33.5 107.724 33.5 108V112C33.5 112.276 33.7239 112.5 34 112.5H38C38.2761 112.5 38.5 112.276 38.5 112V108C38.5 107.724 38.2761 107.5 38 107.5H34Z" fill="#44546F"/>
+<path d="M51.5 111.5H48.5V108.5H51.5V111.5Z" fill="#44546F"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M52 106C53.1046 106 54 106.895 54 108V112C54 113.105 53.1046 114 52 114H48C46.8954 114 46 113.105 46 112V108C46 106.895 46.8954 106 48 106H52ZM48 107.5C47.7239 107.5 47.5 107.724 47.5 108V112C47.5 112.276 47.7239 112.5 48 112.5H52C52.2761 112.5 52.5 112.276 52.5 112V108C52.5 107.724 52.2761 107.5 52 107.5H48Z" fill="#44546F"/>
+<path d="M45 110H42V107H45V110Z" fill="#44546F"/>
+</g>
+<rect id="G2 Slip label" x="62" y="110" width="40" height="5" rx="2.5" fill="#F1F2F4"/>
+<rect id="G3 Slip amount" x="62" y="120" width="30" height="6" rx="3" fill="#DCDFE4"/>
+</g>
+</g>
+<g id="Focus">
+<rect x="23" y="32" width="186" height="63" rx="5" stroke="#265CFF" stroke-width="2"/>
+<rect id="Tint" opacity="0.06" x="22" y="31" width="188" height="65" rx="6" fill="#265CFF"/>
+</g>
+</g>
+</g>
+</g>
+<g id="Badge" filter="url(#filter0_d_20_18727)">
+<rect x="194" y="84" width="36" height="36" rx="18" fill="white"/>
+<rect x="194.5" y="84.5" width="35" height="35" rx="17.5" stroke="#DCDFE4"/>
+<g id="Spinner">
+<g id="lucide/loader-circle">
+<path id="Vector" d="M218.75 102C218.75 103.425 218.299 104.814 217.461 105.967C216.623 107.12 215.441 107.979 214.086 108.419C212.73 108.86 211.27 108.86 209.914 108.419C208.558 107.979 207.377 107.12 206.539 105.967C205.701 104.814 205.25 103.425 205.25 101.999C205.25 100.574 205.701 99.1852 206.539 98.032C207.377 96.8788 208.558 96.0204 209.914 95.5799C211.27 95.1394 212.73 95.1394 214.086 95.5798" stroke="#265CFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<filter id="filter0_d_20_18727" x="178" y="72" width="68" height="68" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="4"/>
+<feGaussianBlur stdDeviation="8"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.0352941 0 0 0 0 0.117647 0 0 0 0 0.258824 0 0 0 0.12 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_20_18727"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_20_18727" result="shape"/>
+</filter>
+<linearGradient id="paint0_linear_20_18727" x1="120" y1="0" x2="120" y2="128" gradientUnits="userSpaceOnUse">
+<stop stop-opacity="0"/>
+<stop offset="0.125"/>
+<stop offset="0.875"/>
+<stop offset="1" stop-opacity="0"/>
+</linearGradient>
+<clipPath id="clip0_20_18727">
+<rect width="240" height="128" fill="white"/>
+</clipPath>
+</defs>
+</svg>

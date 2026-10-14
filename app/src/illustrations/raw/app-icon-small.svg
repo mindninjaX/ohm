@@ -1,0 +1,13 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Size=Small">
+<rect width="1024" height="1024" rx="229" fill="#265CFF"/>
+<g id="Page">
+<rect x="256" y="180" width="512" height="664" rx="88" fill="white"/>
+<rect id="Bolt tile" x="328" y="252" width="280" height="280" rx="72" fill="#265CFF"/>
+<path id="Bolt" d="M488.72 311.354C488.975 304.546 480.343 301.422 476.183 306.817L406.696 396.909C403.147 401.511 406.427 408.184 412.239 408.184H442.425C446.394 408.184 449.569 411.48 449.421 415.446L447.28 472.646C447.025 479.454 455.657 482.578 459.817 477.183L529.304 387.091C532.853 382.489 529.573 375.816 523.761 375.816H493.575C489.606 375.816 486.431 372.52 486.58 368.554L488.72 311.354Z" fill="white"/>
+<rect id="Line 2" x="328" y="576" width="368" height="56" rx="28" fill="#DCDFE4"/>
+<rect id="Line 3" x="328" y="744" width="240" height="56" rx="28" fill="#DCDFE4"/>
+<rect id="Scan line" x="288" y="672" width="448" height="32" rx="16" fill="#265CFF"/>
+</g>
+</g>
+</svg>

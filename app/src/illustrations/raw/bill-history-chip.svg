@@ -1,0 +1,17 @@
+<svg width="28" height="36" viewBox="0 0 28 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Bill history chip">
+<rect id="Page" x="1" y="1" width="26" height="34" rx="4.5" fill="white" stroke="#DCDFE4"/>
+<rect id="Header tile" x="4" y="4" width="7" height="7" rx="2" fill="#E9EFFF"/>
+<rect id="Header line" x="13" y="6.5" width="11" height="2" rx="1" fill="#DCDFE4"/>
+<rect id="Row 1 month" x="4" y="14" width="7" height="2" rx="1" fill="#DCDFE4"/>
+<rect id="Row 1 value" x="15" y="14" width="9" height="2" rx="1" fill="#DCDFE4"/>
+<rect id="Row 2 month" x="4" y="19" width="7" height="2" rx="1" fill="#DCDFE4"/>
+<rect id="Row 2 value" x="15" y="19" width="9" height="2" rx="1" fill="#DCDFE4"/>
+<rect id="Row 3 month" x="4" y="24" width="7" height="2" rx="1" fill="#DCDFE4"/>
+<rect id="Row 3 value" x="15" y="24" width="9" height="2" rx="1" fill="#DCDFE4"/>
+<rect id="Highlight band" x="1" y="28" width="26" height="6" fill="#E9EFFF"/>
+<rect id="Last row month" x="4" y="30" width="7" height="2" rx="1" fill="#265CFF" fill-opacity="0.45"/>
+<rect id="Last row value" x="15" y="30" width="9" height="2" rx="1" fill="#265CFF"/>
+<rect id="Scan line" y="27.25" width="28" height="1.5" rx="0.75" fill="#265CFF"/>
+</g>
+</svg>

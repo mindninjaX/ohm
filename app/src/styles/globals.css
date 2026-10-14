@@ -1,0 +1,276 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+    --font-sans: "Inter Variable", Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+    --text-xs: 0.75rem;
+    --text-xs--line-height: 1rem;
+    --text-sm: 0.875rem;
+    --text-sm--line-height: 1.25rem;
+    --text-base: 1rem;
+    --text-base--line-height: 1.5rem;
+    --text-lg: 1.125rem;
+    --text-lg--line-height: 1.75rem;
+    --text-xl: 1.25rem;
+    --text-xl--line-height: 1.75rem;
+    --text-2xl: 1.5rem;
+    --text-2xl--line-height: 2rem;
+    --text-3xl: 1.875rem;
+    --text-3xl--line-height: 2.25rem;
+    --text-4xl: 2.25rem;
+    --text-4xl--line-height: 2.5rem;
+    --text-5xl: 3rem;
+    --text-5xl--line-height: 3rem;
+    --font-weight-thin: 100;
+    --font-weight-extralight: 200;
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-extrabold: 800;
+    --font-weight-black: 900;
+    --color-surface: var(--surface);
+    --color-surface-muted: var(--surface-muted);
+    --color-ink: var(--ink);
+    --color-ink-strong: var(--ink-strong);
+    --color-ink-muted: var(--ink-muted);
+    --color-line: var(--line);
+    --color-line-strong: var(--line-strong);
+    --color-primary-subtle: var(--primary-subtle);
+    --color-success: var(--success);
+    --color-success-subtle: var(--success-subtle);
+    --color-warning: var(--warning);
+    --color-warning-subtle: var(--warning-subtle);
+    --color-danger: var(--danger);
+    --color-danger-subtle: var(--danger-subtle);
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+    --color-text-destructive: var(--text-destructive);
+    --color-destructive-subtle: var(--destructive-subtle);
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+    --color-ring-subtle: var(--ring-alpha);
+    --color-ring-destructive: var(--ring-destructive-alpha);
+    --color-chart-1: var(--chart-1);
+    --color-chart-2: var(--chart-2);
+    --color-chart-3: var(--chart-3);
+    --color-chart-4: var(--chart-4);
+    --color-chart-5: var(--chart-5);
+    --color-sidebar: var(--sidebar);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-ring: var(--sidebar-ring);
+    --radius-none: var(--radius-none);
+    --radius-xs: var(--radius-xs);
+    --radius-sm: var(--radius-sm);
+    --radius-md: var(--radius-md);
+    --radius-lg: var(--radius-lg);
+    --radius-xl: var(--radius-xl);
+    --radius-2xl: var(--radius-2xl);
+    --radius-3xl: var(--radius-3xl);
+    --radius-4xl: var(--radius-4xl);
+    --animate-accordion-down: accordion-down 0.2s ease-out;
+    --animate-accordion-up: accordion-up 0.2s ease-out;
+    --animate-caret-blink: caret-blink 1.25s ease-out infinite;
+    --shadow-2xs: var(--shadow-2xs);
+    --shadow-xs: var(--shadow-xs);
+    --shadow-sm: var(--shadow-sm);
+    --shadow-md: var(--shadow-md);
+    --shadow-lg: var(--shadow-lg);
+    --shadow-xl: var(--shadow-xl);
+    --shadow-2xl: var(--shadow-2xl);
+    --color-ring-destructive-alpha: var(--ring-destructive-alpha);
+    --color-ring-alpha: var(--ring-alpha);
+    --focus-ring-destructive: var(--focus-ring-destructive);
+    --focus-ring: var(--focus-ring);
+    --radius-full: var(--radius-full);
+  @keyframes accordion-down {
+  from {
+    height: 0;
+        }
+  to {
+    height: var(--radix-accordion-content-height);
+        }
+    }
+  @keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+        }
+  to {
+    height: 0;
+        }
+    }
+  @keyframes caret-blink {
+  0%, 70%, 100% {
+    opacity: 1;
+        }
+  20%, 50% {
+    opacity: 0;
+        }
+    }
+}
+
+:root {
+    --radius: 0.625rem;
+    --radius-none: 0rem;
+    --radius-xs: calc(var(--radius) - 6px);
+    --radius-sm: calc(var(--radius) - 4px);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-lg: var(--radius);
+    /* Ohm's Figma file draws rounded-xl as 12 and rounded-2xl as 16 (Card 16, Tile 12, Alert 16, Toast 16;
+       its tw/border-radius scale is Tailwind's own), where shadcn's rem scale gives 14 and 18. */
+    --radius-xl: 12px;
+    --radius-2xl: 16px;
+    --radius-3xl: calc(var(--radius) + 12px);
+    --radius-4xl: calc(var(--radius) + 16px);
+    --radius-full: 9999px;
+    --background: #ffffff;
+    --foreground: #0a0a0a;
+    --card: #ffffff;
+    --card-foreground: #0a0a0a;
+    --popover: #ffffff;
+    --popover-foreground: #0a0a0a;
+    --primary: #171717;
+    --primary-foreground: #fafafa;
+    --secondary: #f5f5f5;
+    --secondary-foreground: #0a0a0a;
+    --muted: #f5f5f5;
+    --muted-foreground: #737373;
+    --accent: #f5f5f5;
+    --accent-foreground: #171717;
+    --destructive: #e7000b;
+    --destructive-foreground: #fafafa;
+    --text-destructive: #e7000b;
+    --destructive-subtle: #e7000b1a;
+    --border: #e5e5e5;
+    --input: #e5e5e5;
+    --ring: #737373;
+    --chart-1: #5eb1ef;
+    --chart-2: #0090ff;
+    --chart-3: #0588f0;
+    --chart-4: #0d74ce;
+    --chart-5: #113264;
+    --sidebar: #fafafa;
+    --sidebar-foreground: #0a0a0a;
+    --sidebar-primary: #171717;
+    --sidebar-primary-foreground: #fafafa;
+    --sidebar-accent: #f5f5f5;
+    --sidebar-accent-foreground: #171717;
+    --sidebar-border: #e5e5e5;
+    --sidebar-ring: #737373;
+    --shadow-2xs: 0 1px 0 0 rgb(0 0 0 / 0.05);
+    --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.10);
+    --shadow-sm: 0 1px 2px -1px rgb(0 0 0 / 0.10), 0 1px 3px 0 rgb(0 0 0 / 0.10);
+    --shadow-md: 0 2px 4px -2px rgb(0 0 0 / 0.10), 0 4px 6px -1px rgb(0 0 0 / 0.10);
+    --shadow-lg: 0 4px 6px -4px rgb(0 0 0 / 0.10), 0 10px 15px -3px rgb(0 0 0 / 0.10);
+    --shadow-xl: 0 8px 10px -6px rgb(0 0 0 / 0.10), 0 20px 25px -5px rgb(0 0 0 / 0.10);
+    --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+    --focus-ring: 0 0 0 3px #a1a1a180;
+    --focus-ring-destructive: 0 0 0 3px #dc262633;
+    --ring-alpha: #a1a1a180;
+    --ring-destructive-alpha: #dc262633;
+}
+
+
+/* ------------------------------------------------------------------ Ohm brand tokens
+   Source: Figma file mwmHwXDuayUYeliDAlv3Fo, collection "brand" (single mode, light).
+   Read 14 Oct 2026. `card` resolves from the shadcn theme library (white).
+   `surface` has no Figma variable: it is the shadcn background (white). The Figma
+   screens sit on `surface-muted` and put white cards on top. Light only, no dark mode. */
+:root {
+    color-scheme: light;
+
+    --primary: #265cff;
+    --primary-subtle: #e9efff;
+    --ink: #172b4d;
+    --ink-strong: #091e42;
+    --ink-muted: #44546f;
+    --line: #dcdfe4;
+    --line-strong: #8590a2;
+    --surface: #ffffff;
+    --surface-muted: #f1f2f4;
+    --card: #ffffff;
+    --success: #216e4e;
+    --success-subtle: #dcfff1;
+    --warning: #a54800;
+    --warning-subtle: #fff7d6;
+    --danger: #ae2e24;
+    --danger-subtle: #ffeceb;
+
+    /* shadcn semantic tokens, pointed at the brand so every kit component picks them up. */
+    --background: var(--surface);
+    --foreground: var(--ink);
+    --card-foreground: var(--ink);
+    --popover: var(--card);
+    --popover-foreground: var(--ink);
+    --primary-foreground: #ffffff;
+    --secondary: var(--surface-muted);
+    --secondary-foreground: var(--ink);
+    --muted: var(--surface-muted);
+    --muted-foreground: var(--ink-muted);
+    --accent: var(--surface-muted);
+    --accent-foreground: var(--ink);
+    --destructive: var(--danger);
+    --destructive-foreground: #ffffff;
+    --text-destructive: var(--danger);
+    --destructive-subtle: var(--danger-subtle);
+    --border: var(--line);
+    --input: var(--line-strong);
+    --ring: var(--primary);
+    --ring-alpha: #265cff66;
+    --focus-ring: 0 0 0 3px #265cff66;
+    --sidebar: var(--surface);
+    --sidebar-foreground: var(--ink);
+    --sidebar-primary: var(--primary);
+    --sidebar-primary-foreground: #ffffff;
+    --sidebar-accent: var(--surface-muted);
+    --sidebar-accent-foreground: var(--ink);
+    --sidebar-border: var(--line);
+    --sidebar-ring: var(--primary);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    }
+  body {
+    @apply bg-surface text-ink font-sans;
+    /* Default font features only: Figma draws Inter without cv11 or ss01 (see fonts.css). */
+    -webkit-font-smoothing: antialiased;
+    }
+  /* shadcn's rule, kept for lucide icons only. On any other svg (the Figma illustrations, hand-drawn
+     icons) it overrode the stroke widths drawn in the art and set on the svg itself. */
+  svg.lucide:not([class*="stroke-"]) {
+    stroke-width: 2;
+    }
+  html {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    }
+  body {
+    min-height: 100dvh;
+    }
+}

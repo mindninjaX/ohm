@@ -1,0 +1,145 @@
+<svg width="240" height="290" viewBox="0 0 240 290" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Size=Hero, Focus=None, Status=Done, Scan=None">
+<g id="Crop" clip-path="url(#clip0_20_18627)">
+<mask id="mask0_20_18627" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="240" height="290">
+<rect id="Fade mask" width="240" height="290" fill="url(#paint0_linear_20_18627)"/>
+</mask>
+<g mask="url(#mask0_20_18627)">
+<g id="Paper">
+<g id="Page">
+<rect x="16.5" y="0.5" width="199" height="263" rx="13.5" fill="white"/>
+<rect x="16.5" y="0.5" width="199" height="263" rx="13.5" stroke="#DCDFE4"/>
+<g id="A Masthead">
+<rect id="A0 Band" x="16" width="200" height="38" fill="#F1F2F4"/>
+<g id="A1 Emblem">
+<rect x="32" y="8" width="22" height="22" rx="11" fill="#265CFF"/>
+<g id="Utility pole" clip-path="url(#clip1_20_18627)">
+<path id="Vector" d="M43 14V24M38 15.5H48M38.5 14.5V15.5M40.5 14.5V15.5M45.5 14.5V15.5M47.5 14.5V15.5M46.5 15.5L43 19L39.5 15.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+<rect id="A2 Name, state language" x="62" y="11" width="92" height="7" rx="3.5" fill="#DCDFE4"/>
+<rect id="A3 Name, English" x="62" y="23" width="60" height="5" rx="2.5" fill="#DCDFE4"/>
+</g>
+<g id="B Consumer and dates">
+<rect id="B1 Name" x="32" y="48" width="70" height="6" rx="3" fill="#DCDFE4"/>
+<rect id="B2 Address" x="32" y="59" width="58" height="5" rx="2.5" fill="#F1F2F4"/>
+<g id="B3 Consumer number box">
+<rect x="32.5" y="69.5" width="51" height="13" rx="3.5" fill="white"/>
+<rect x="32.5" y="69.5" width="51" height="13" rx="3.5" stroke="#DCDFE4"/>
+<rect id="Line" x="37" y="74" width="42" height="4" rx="2" fill="#DCDFE4"/>
+</g>
+<g id="B4 Bill date box">
+<rect x="122.5" y="46.5" width="36" height="36" rx="5.5" fill="white"/>
+<rect x="122.5" y="46.5" width="36" height="36" rx="5.5" stroke="#DCDFE4"/>
+<rect id="Label" x="127" y="54" width="18" height="5" rx="2.5" fill="#F1F2F4"/>
+<rect id="Value" x="127" y="67" width="26" height="6" rx="3" fill="#DCDFE4"/>
+</g>
+<g id="B5 Due date box">
+<rect x="163.5" y="46.5" width="36" height="36" rx="5.5" fill="white"/>
+<rect x="163.5" y="46.5" width="36" height="36" rx="5.5" stroke="#DCDFE4"/>
+<rect id="Label_2" x="168" y="54" width="18" height="5" rx="2.5" fill="#F1F2F4"/>
+<rect id="Value_2" x="168" y="67" width="26" height="6" rx="3" fill="#DCDFE4"/>
+</g>
+</g>
+<g id="C Meter table">
+<g id="C0 Meter table">
+<g clip-path="url(#clip2_20_18627)">
+<rect x="32" y="91" width="168" height="30" rx="4" fill="white"/>
+<rect id="C1 Header fill" x="32" y="91" width="168" height="10" fill="#F1F2F4"/>
+<rect id="C2 Rule 1" x="88" y="91" width="1" height="30" fill="#DCDFE4"/>
+<rect id="C2 Rule 2" x="144" y="91" width="1" height="30" fill="#DCDFE4"/>
+<rect id="C3 Header 1" x="38" y="94" width="20" height="4" rx="2" fill="#DCDFE4"/>
+<rect id="C3 Header 2" x="114" y="94" width="24" height="4" rx="2" fill="#DCDFE4"/>
+<rect id="C3 Header 3" x="178" y="94" width="16" height="4" rx="2" fill="#DCDFE4"/>
+<rect id="C4 Body 1" x="38" y="104" width="14" height="4" rx="2" fill="#DCDFE4"/>
+<rect id="C4 Body 2" x="110" y="104" width="28" height="4" rx="2" fill="#DCDFE4"/>
+<rect id="C4 Body 3" x="172" y="104" width="22" height="4" rx="2" fill="#DCDFE4"/>
+<rect id="C4 Body 4" x="38" y="114" width="18" height="4" rx="2" fill="#DCDFE4"/>
+<rect id="C4 Body 5" x="114" y="114" width="24" height="4" rx="2" fill="#DCDFE4"/>
+<rect id="C4 Body 6" x="178" y="114" width="16" height="4" rx="2" fill="#DCDFE4"/>
+</g>
+<rect x="32.5" y="91.5" width="167" height="29" rx="3.5" stroke="#DCDFE4"/>
+</g>
+</g>
+<g id="D Usage strip">
+<rect id="D1 Caption" x="32" y="127" width="48" height="4" rx="2" fill="#DCDFE4"/>
+<g id="D2 Usage bars">
+<rect id="D2 Bar 1" x="34" y="139.29" width="8" height="18.7101" rx="2" fill="#DCDFE4"/>
+<rect id="D2 Bar 2" x="47" y="139.876" width="8" height="18.124" rx="2" fill="#DCDFE4"/>
+<rect id="D2 Bar 3" x="60" y="139.344" width="8" height="18.6564" rx="2" fill="#DCDFE4"/>
+<rect id="D2 Bar 4" x="73" y="140.966" width="8" height="17.034" rx="2" fill="#DCDFE4"/>
+<rect id="D2 Bar 5" x="86" y="140.489" width="8" height="17.5109" rx="2" fill="#DCDFE4"/>
+<rect id="D2 Bar 6" x="99" y="141.026" width="8" height="16.9738" rx="2" fill="#DCDFE4"/>
+<rect id="D2 Bar 7" x="112" y="142.728" width="8" height="15.2725" rx="2" fill="#DCDFE4"/>
+<rect id="D2 Bar 8" x="125" y="140.998" width="8" height="17.0018" rx="2" fill="#DCDFE4"/>
+<rect id="D2 Bar 9" x="138" y="139.553" width="8" height="18.4466" rx="2" fill="#DCDFE4"/>
+<rect id="D2 Bar 10" x="151" y="138" width="8" height="20" rx="2" fill="#DCDFE4"/>
+<rect id="D2 Bar 11" x="164" y="138.55" width="8" height="19.45" rx="2" fill="#DCDFE4"/>
+<rect id="D2 Bar 12" x="177" y="139.251" width="8" height="18.7487" rx="2" fill="#DCDFE4"/>
+<rect id="D2 Bar 13" x="190" y="138.918" width="8" height="19.0819" rx="2" fill="#265CFF"/>
+</g>
+</g>
+<g id="E Charges">
+<rect id="E Label 1" x="32" y="166" width="62" height="5" rx="2.5" fill="#F1F2F4"/>
+<rect id="E Amount 1" x="168" y="166" width="32" height="5" rx="2.5" fill="#DCDFE4"/>
+<rect id="E Label 2" x="32" y="175" width="50" height="5" rx="2.5" fill="#F1F2F4"/>
+<rect id="E Amount 2" x="174" y="175" width="26" height="5" rx="2.5" fill="#DCDFE4"/>
+<rect id="E Label 3" x="32" y="184" width="30" height="5" rx="2.5" fill="#F1F2F4"/>
+<rect id="E Amount 3" x="174" y="184" width="26" height="5" rx="2.5" fill="#DCDFE4"/>
+<rect id="E Label 4" x="32" y="193" width="40" height="5" rx="2.5" fill="#F1F2F4"/>
+<rect id="E Amount 4" x="174" y="193" width="26" height="5" rx="2.5" fill="#DCDFE4"/>
+</g>
+<g id="F Total payable">
+<rect id="F0 Total box" x="32" y="204" width="168" height="18" rx="5" fill="#E9EFFF"/>
+<rect id="F1 Label" x="38" y="210" width="44" height="6" rx="3" fill="#DCDFE4"/>
+<path id="F2 Rupee" d="M160.968 211.325L160.741 212.162H156.5L156.73 211.325H160.968ZM158.836 216.273L156.599 213.581L156.596 212.872H157.702C157.966 212.872 158.186 212.828 158.363 212.741C158.542 212.651 158.678 212.527 158.769 212.367C158.863 212.205 158.91 212.015 158.91 211.798C158.91 211.472 158.814 211.21 158.622 211.012C158.43 210.814 158.124 210.715 157.702 210.715H156.5L156.749 209.727H157.702C158.239 209.727 158.683 209.81 159.034 209.976C159.388 210.14 159.652 210.373 159.827 210.673C160.004 210.973 160.092 211.325 160.092 211.728C160.092 212.084 160.027 212.401 159.897 212.68C159.767 212.959 159.563 213.188 159.284 213.367C159.005 213.546 158.639 213.666 158.188 213.725L158.149 213.738L160.169 216.215V216.273H158.836ZM160.974 209.727L160.741 210.577L157.302 210.564L157.536 209.727H160.974Z" fill="#265CFF"/>
+<rect id="F3 Amount" x="166" y="210" width="28" height="6" rx="3" fill="#DCDFE4"/>
+</g>
+<g id="G Tear-off slip">
+<line id="G0 Tear line" x1="16" y1="229.5" x2="216" y2="229.5" stroke="#DCDFE4" stroke-dasharray="3 3"/>
+<g id="G1 QR" opacity="0.45">
+<path d="M37.5 255.5H34.5V252.5H37.5V255.5Z" fill="#44546F"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M38 250C39.1046 250 40 250.895 40 252V256C40 257.105 39.1046 258 38 258H34C32.8954 258 32 257.105 32 256V252C32 250.895 32.8954 250 34 250H38ZM34 251.5C33.7239 251.5 33.5 251.724 33.5 252V256C33.5 256.276 33.7239 256.5 34 256.5H38C38.2761 256.5 38.5 256.276 38.5 256V252C38.5 251.724 38.2761 251.5 38 251.5H34Z" fill="#44546F"/>
+<path d="M46 256H43V253H46V256Z" fill="#44546F"/>
+<path d="M52 256H49V253H52V256Z" fill="#44546F"/>
+<path d="M46 250H43V247H46V250Z" fill="#44546F"/>
+<path d="M52 250H49V247H52V250Z" fill="#44546F"/>
+<path d="M45 245H42V242H45V245Z" fill="#44546F"/>
+<path d="M37.5 241.5H34.5V238.5H37.5V241.5Z" fill="#44546F"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M38 236C39.1046 236 40 236.895 40 238V242C40 243.105 39.1046 244 38 244H34C32.8954 244 32 243.105 32 242V238C32 236.895 32.8954 236 34 236H38ZM34 237.5C33.7239 237.5 33.5 237.724 33.5 238V242C33.5 242.276 33.7239 242.5 34 242.5H38C38.2761 242.5 38.5 242.276 38.5 242V238C38.5 237.724 38.2761 237.5 38 237.5H34Z" fill="#44546F"/>
+<path d="M51.5 241.5H48.5V238.5H51.5V241.5Z" fill="#44546F"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M52 236C53.1046 236 54 236.895 54 238V242C54 243.105 53.1046 244 52 244H48C46.8954 244 46 243.105 46 242V238C46 236.895 46.8954 236 48 236H52ZM48 237.5C47.7239 237.5 47.5 237.724 47.5 238V242C47.5 242.276 47.7239 242.5 48 242.5H52C52.2761 242.5 52.5 242.276 52.5 242V238C52.5 237.724 52.2761 237.5 52 237.5H48Z" fill="#44546F"/>
+<path d="M45 240H42V237H45V240Z" fill="#44546F"/>
+</g>
+<rect id="G2 Slip label" x="62" y="240" width="40" height="5" rx="2.5" fill="#F1F2F4"/>
+<rect id="G3 Slip amount" x="62" y="250" width="30" height="6" rx="3" fill="#DCDFE4"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+<g id="Badge">
+<rect x="186" y="238" width="52" height="52" rx="26" fill="#DCFFF1"/>
+<g id="Icon">
+<path id="Vector_2" d="M220 258L209 269L204 264" stroke="#216E4E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+</g>
+<defs>
+<linearGradient id="paint0_linear_20_18627" x1="120" y1="0" x2="120" y2="290" gradientUnits="userSpaceOnUse">
+<stop/>
+<stop offset="0.125"/>
+<stop offset="0.875"/>
+<stop offset="1"/>
+</linearGradient>
+<clipPath id="clip0_20_18627">
+<rect width="240" height="290" fill="white"/>
+</clipPath>
+<clipPath id="clip1_20_18627">
+<rect width="12" height="12" fill="white" transform="translate(37 13)"/>
+</clipPath>
+<clipPath id="clip2_20_18627">
+<rect x="32" y="91" width="168" height="30" rx="4" fill="white"/>
+</clipPath>
+</defs>
+</svg>
