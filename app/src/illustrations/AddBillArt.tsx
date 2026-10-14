@@ -167,9 +167,12 @@ const BRACKETS = [
 export function ArtPhoto(props: AddBillArtProps) {
   const reduced = useReduced();
   const { active = false } = props;
-  // Rest is the Active layout nudged by (3.21, -2.29) and turned 6 degrees about the paper's top-left corner.
+  // Rest is the Active layout nudged by (3.27, -2.34) and turned 6 degrees about the paper's top-left corner.
+  // Figma's paper frame sits at (54.267, 15.656) and turns about its own top-left, which is the paper's 48 x 60
+  // stroke box at (51, 18) here. The origin is given in the art's own coordinates (view-box), not as a share of
+  // the fill box motion would use ((51.5, 18.5)), which would put the paper about 1 px off.
   const paper: Variants = {
-    rest: { x: reduced ? 0 : 3.2121, y: reduced ? 0 : -2.2948, rotate: reduced ? 0 : 6, transition: settle(reduced) },
+    rest: { x: reduced ? 0 : 3.267, y: reduced ? 0 : -2.344, rotate: reduced ? 0 : 6, transition: settle(reduced) },
     active: { x: 0, y: 0, rotate: 0, transition: settle(reduced) },
   };
   // Brackets sit 4 px out at Rest, snap onto the page in Active, then breathe.
@@ -187,7 +190,7 @@ export function ArtPhoto(props: AddBillArtProps) {
   });
   return (
     <ArtShell {...props} label={active ? 'active' : 'rest'} reduced={reduced}>
-      <motion.g data-part="paper" variants={paper} style={{ transformOrigin: '0% 0%' }}>
+      <motion.g data-part="paper" variants={paper} style={{ transformBox: 'view-box', originX: '51px', originY: '18px' }}>
         <rect x={51.5} y={18.5} width={47} height={59} rx={4.5} fill="var(--card)" stroke="var(--line)" />
         <PdfPaperHeader x={57} y={24} />
         <rect data-part="title-line" x={71} y={27} width={18} height={4} rx={2} fill="var(--line)" />
@@ -308,7 +311,7 @@ export function ArtConnect(props: ArtConnectProps) {
         <path
           data-part="source-glyph"
           d={SOURCE_GLYPH_D}
-          stroke="var(--primary)"
+          stroke={enabled ? 'var(--primary)' : 'var(--ink-muted)'}
           strokeWidth={1.2}
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -349,7 +352,7 @@ export function ArtConnect(props: ArtConnectProps) {
         <motion.path
           data-part="unplug"
           d={UNPLUG_D}
-          stroke="var(--primary)"
+          stroke={enabled ? 'var(--primary)' : 'var(--ink-muted)'}
           strokeLinecap="round"
           strokeLinejoin="round"
           variants={unplug}

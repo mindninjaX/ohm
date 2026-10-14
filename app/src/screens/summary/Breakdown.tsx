@@ -78,7 +78,7 @@ export function Breakdown() {
     >
       <BillCardCompact eyebrow="Bill total" />
 
-      <div data-slot="breakdown-table" className="rounded-2xl bg-card">
+      <div data-slot="breakdown-table" className="rounded-2xl bg-card pb-4">
         <p className="px-4 pt-4 text-sm font-medium text-ink-muted">Charges</p>
 
         <PartRow
@@ -196,7 +196,7 @@ export function Breakdown() {
         />
 
         <SubtotalRow
-          className="mt-2 mb-4"
+          className="mt-2"
           name="Bill total"
           amount={formatINR(TOTAL)}
           maths={`Your parts add up to ${formatINR(TOTAL_BEFORE_ROUNDING)}. Northgrid rounds down to the nearest ${formatINR(RULES.roundDownToRupees)}.`}

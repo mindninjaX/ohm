@@ -1,5 +1,5 @@
 import { act, fireEvent, render, renderHook, screen } from '@testing-library/react';
-import { MemoryRouter, Route, Routes, useLocation } from 'react-router';
+import { MemoryRouter, Route, Routes, useLocation, useNavigate } from 'react-router';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { PARTS, SAVING, TOTAL, UNITS } from '@/data/bill';
 import { formatINR, formatUnits } from '@/lib/format';
@@ -13,7 +13,8 @@ import {
   READ_ROWS,
   STEPS,
 } from './readingContent';
-import { DONE_AT, STEP_DONE_AT, useReadingSimulation } from './useReadingSimulation';
+import { DemoProvider, DEFAULT_DEMO_STATE } from '@/shell/demo';
+import { clearReadingDone, DONE_AT, markReadingDone, STEP_DONE_AT, useReadingSimulation, wasReadingDone } from './useReadingSimulation';
 import { screens } from './routes';
 
 const text = (row: { value: { text: string } | { rupees: number } }) =>
@@ -102,6 +103,80 @@ describe('useReadingSimulation', () => {
   });
 });
 
+describe('a bill that was read stays read', () => {
+  beforeEach(() => {
+    vi.useFakeTimers();
+    clearReadingDone();
+  });
+  afterEach(() => {
+    clearReadingDone();
+    vi.useRealTimers();
+  });
+
+  it('remembers a reading that played out, one that was skipped, and forgets it on clear', () => {
+    expect(wasReadingDone()).toBe(false);
+    const played = renderHook(() => useReadingSimulation('run'));
+    act(() => void vi.advanceTimersByTime(DONE_AT));
+    expect(played.result.current.phase).toBe('done');
+    expect(wasReadingDone()).toBe(true);
+    clearReadingDone();
+    expect(wasReadingDone()).toBe(false);
+    const skipped = renderHook(() => useReadingSimulation('run'));
+    act(() => skipped.result.current.skip());
+    expect(wasReadingDone()).toBe(true);
+  });
+
+  it('does not count a mid-read frame, and forgets the note when the demo flips first-bill mode (Reset)', () => {
+    renderHook(() => useReadingSimulation('frame'));
+    act(() => void vi.advanceTimersByTime(20_000));
+    expect(wasReadingDone()).toBe(false);
+    markReadingDone(true);
+    expect(wasReadingDone(true)).toBe(true);
+    expect(wasReadingDone(false)).toBe(false);
+  });
+
+  function Where() {
+    const { pathname, search } = useLocation();
+    return <output data-testid="where">{pathname + search}</output>;
+  }
+  function renderReading(entries: string[], index: number) {
+    const Reading = screens['/reading']!;
+    render(
+      <DemoProvider initial={DEFAULT_DEMO_STATE}>
+        <MemoryRouter initialEntries={entries} initialIndex={index}>
+          <Routes>
+            <Route path="/reading" element={<Reading />} />
+            <Route path="/connection" element={<Where />} />
+            <Route path="/bill/checks" element={<Where />} />
+          </Routes>
+        </MemoryRouter>
+      </DemoProvider>,
+    );
+  }
+
+  it('Back onto a bill that was read shows it read at once: no Skip, steps closed, Done', () => {
+    markReadingDone();
+    renderReading(['/reading'], 0);
+    expect(screen.getByRole('heading', { name: 'How Ohm read this bill' })).toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: 'Skip' })).toBeNull();
+    expect(screen.getByRole('button', { name: /Found Northgrid/ })).toHaveAttribute('aria-expanded', 'false');
+    fireEvent.click(screen.getByRole('button', { name: 'Done' }));
+    expect(screen.getByTestId('where')).toHaveTextContent('/connection');
+  });
+
+  it('a bill not read yet starts scanning, with Skip', () => {
+    renderReading(['/reading'], 0);
+    expect(screen.getByRole('heading', { name: 'Reading your bill' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Skip' })).toBeInTheDocument();
+  });
+
+  it('Done on the review from Checks goes back to Checks, not to the first-bill connection screen', () => {
+    renderReading(['/bill/checks', '/reading?open=all'], 1);
+    fireEvent.click(screen.getByRole('button', { name: 'Done' }));
+    expect(screen.getByTestId('where')).toHaveTextContent('/bill/checks');
+  });
+});
+
 describe('Add bill tile', () => {
   it('fires onClick, and the coming-soon tile is disabled and says so', () => {
     const onClick = vi.fn();
@@ -152,5 +227,32 @@ describe('routes', () => {
     );
     fireEvent.click(screen.getByRole('button', { name: /August power bill: ₹36,42,160/ }));
     expect(screen.getByTestId('where')).toHaveTextContent('/bill');
+  });
+
+  it('opening the bill replaces the lock screen, so Back from the bill never returns to it', () => {
+    function Bill() {
+      const navigate = useNavigate();
+      return (
+        <button type="button" onClick={() => navigate(-1)}>
+          back
+        </button>
+      );
+    }
+    function Home() {
+      return <output data-testid="home">home</output>;
+    }
+    const Lock = screens['/notification']!;
+    render(
+      <MemoryRouter initialEntries={['/', '/notification']} initialIndex={1}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/notification" element={<Lock />} />
+          <Route path="/bill" element={<Bill />} />
+        </Routes>
+      </MemoryRouter>,
+    );
+    fireEvent.click(screen.getByRole('button', { name: /August power bill: ₹36,42,160/ }));
+    fireEvent.click(screen.getByRole('button', { name: 'back' }));
+    expect(screen.getByTestId('home')).toBeInTheDocument();
   });
 });

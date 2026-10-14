@@ -4,6 +4,7 @@ import { useContext, useEffect, useId, useSyncExternalStore, type CSSProperties,
 import { createPortal } from 'react-dom';
 import { Toaster as Sonner, toast as sonner } from 'sonner';
 import { cn } from '@/lib/utils';
+import { useAppViewport } from '@/shell/viewport';
 import { SPRING, useReduced } from './lib/motion';
 import { PortalContainerContext } from './lib/portal';
 
@@ -52,6 +53,8 @@ export function Toast({ tone = 'success', className, children }: ToastProps) {
 /** Our toasts belong to this toaster only, so another Sonner toaster in the app never shows them. */
 const TOASTER_ID = 'ohm';
 const SHOW_MS = 2400;
+/** Figma: Toast is 361 wide on the 393 frame. */
+const TOAST_WIDTH = 361;
 
 function show(tone: ToastTone, message: string): string | number {
   return sonner.custom(() => <Toast tone={tone}>{message}</Toast>, {
@@ -99,11 +102,14 @@ function useIsPrimaryToaster(): boolean {
 /**
  * The toast host: Sonner, with our Toast as the content. It mounts into the shell's
  * PortalContainerContext (inside the phone frame), top centre 8 px under the status bar (Figma: y 70 with
- * a 62 px bar), with a 16 px gutter on a phone. Mount it once (a second one stays silent).
+ * a 62 px bar), full width minus a 16 px gutter each side (361 px in the 393 px frame, on desktop and phone). Mount it once (a second one stays silent).
  */
 export function OhmToaster() {
   const contextContainer = useContext(PortalContainerContext);
   const primary = useIsPrimaryToaster();
+  // Figma: a 361 px bar on a 393 screen (16 px gutters). Narrower screens keep the gutters.
+  const { width: screenWidth } = useAppViewport();
+  const barWidth = Math.max(0, Math.min(TOAST_WIDTH, screenWidth - 32));
   if (!primary) return null;
   return createPortal(
     <Sonner
@@ -114,8 +120,17 @@ export function OhmToaster() {
       offset={{ top: 'calc(var(--safe-top, 0px) + 8px)', left: 16, right: 16 }}
       mobileOffset={{ top: 'calc(var(--safe-top, 0px) + 8px)', left: 16, right: 16 }}
       swipeDirections={['top', 'left', 'right']}
-      toastOptions={{ unstyled: true, toasterId: TOASTER_ID }}
-      style={{ '--width': '361px' } as CSSProperties}
+      // Sonner only gives the toast a width inside its own phone media query (max-width 600px), so on a
+      // desktop frame a toast hugged its text. An explicit width makes it the full bar everywhere.
+      toastOptions={{
+        unstyled: true,
+        toasterId: TOASTER_ID,
+        style: { width: 'var(--width)' },
+        // Sonner unmounts a dismissed toast after 200 ms but fades it over 400 ms, so it was cut off half
+        // faded. 120 ms lets it finish before it goes (and clears quickly when a screen dismisses it).
+        className: 'data-[removed=true]:duration-[120ms]!',
+      }}
+      style={{ '--width': `${barWidth}px` } as CSSProperties}
     />,
     contextContainer ?? document.body,
   );

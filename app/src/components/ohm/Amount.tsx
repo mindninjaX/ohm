@@ -13,8 +13,13 @@ export interface AmountProps {
   size?: AmountSize;
   /** The old price being replaced: all text goes `ink-muted` and a line is drawn through it. */
   struck?: boolean;
-  /** Count up from 0 the first time it scrolls into view, once per screen. The digits grow rightwards from the rupee sign. */
+  /** Count up from `countFrom` the first time it scrolls into view, once per screen. The digits grow rightwards from the rupee sign. */
   countUp?: boolean;
+  /**
+   * Rupees the count starts from. Default 0. A payment confirmation passes about 95 % of the value, so "Paid ₹0" is
+   * never on screen. Only used with `countUp`.
+   */
+  countFrom?: number;
   /** Seconds to wait before the count starts (after the check pops, for example). Default 0. */
   countDelay?: number;
   /** Count on every mount, not only the first time this figure is seen on this path. Default false. */
@@ -71,7 +76,7 @@ function splitAmount(value: number, decimals?: number): { negative: boolean; dig
 }
 
 /**
- * The digits counting up from 0 when they first scroll into view, then settling on the real figure.
+ * The digits counting up from `from` (0 unless the caller says otherwise) when they first scroll into view, then settling on the real figure.
  * It counts once per `path:value:size`: coming back to a screen shows the figure at once.
  * The box is always as wide as the final figure (the count is laid over an invisible copy of it, so
  * the width never changes while it counts), the count grows rightwards from the left edge (so it never
@@ -79,6 +84,7 @@ function splitAmount(value: number, decimals?: number): { negative: boolean; dig
  */
 function CountingDigits({
   value,
+  from,
   size,
   decimals,
   delay,
@@ -86,6 +92,7 @@ function CountingDigits({
   className,
 }: {
   value: number;
+  from: number;
   size: AmountSize;
   decimals: number;
   delay: number;
@@ -98,7 +105,7 @@ function CountingDigits({
   const inView = useSeenOnce(ref);
   // Decided once, when it mounts: an amount that has counted before is shown as it is.
   const [done, setDone] = useState(() => !replay && seenCounts.has(seenKey));
-  const progress = useMotionValue(0);
+  const progress = useMotionValue(from);
   const shown = useTransform(progress, (v) =>
     splitAmount(decimals === 0 ? Math.round(v) : v, decimals).digits,
   );
@@ -136,13 +143,14 @@ function CountingDigits({
 
 /**
  * Figma: Ohm / Amount. The rupee sign is smaller and `ink-muted`; the digits are `ink-strong`.
- * `struck` draws the strike left to right over 300 ms. `countUp` counts from 0 when first seen.
+ * `struck` draws the strike left to right over 300 ms. `countUp` counts from `countFrom` (0) when first seen.
  */
 export function Amount({
   value,
   size = 'l',
   struck = false,
   countUp = false,
+  countFrom = 0,
   countDelay = 0,
   replay = false,
   className,
@@ -168,6 +176,7 @@ export function Amount({
       {countUp && !reduced ? (
         <CountingDigits
           value={value}
+          from={countFrom}
           size={size}
           decimals={decimals}
           delay={countDelay}

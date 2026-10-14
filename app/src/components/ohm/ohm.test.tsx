@@ -565,6 +565,20 @@ describe('Toast', () => {
     expect(await screen.findAllByText('Link copied')).toHaveLength(1);
     act(() => toast.dismiss());
   });
+
+  it('gives the toast the full bar width (361 in a 393 frame), not the width of its text', async () => {
+    render(<OhmToaster />);
+    act(() => {
+      toast.success('Copied');
+    });
+    await screen.findByText('Copied');
+    const bar = document.querySelector<HTMLElement>('[data-sonner-toast]');
+    // Sonner only sizes a toast inside its own phone media query; the explicit width is what makes
+    // it the same bar inside the desktop phone frame.
+    expect(bar?.style.width).toBe('var(--width)');
+    expect(document.querySelector<HTMLElement>('[data-sonner-toaster]')?.style.getPropertyValue('--width')).toBe('361px');
+    act(() => toast.dismiss());
+  });
 });
 
 describe('Gallery', () => {

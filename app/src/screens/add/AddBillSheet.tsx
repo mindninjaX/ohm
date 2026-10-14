@@ -6,6 +6,7 @@ import { UploadSimulation } from '@/illustrations';
 import { AddBillTile } from './components/AddBillTile';
 import { CameraOverlay } from './CameraOverlay';
 import { ADD_TILE_GAP, ADD_TILE_WIDTH, UPLOAD_FILE } from './copy';
+import { clearReadingDone } from './useReadingSimulation';
 
 type Mode = 'choose' | 'uploading';
 
@@ -31,7 +32,11 @@ export function AddBillSheet() {
   const [mode, setMode] = useState<Mode>('choose');
   const [camera, setCamera] = useState(false);
 
-  const openReading = () => navigate('/reading', { replace: true });
+  // A new read starts here (Upload the PDF or Take a photo): forget any bill that was read before.
+  const openReading = () => {
+    clearReadingDone();
+    navigate('/reading', { replace: true });
+  };
 
   return (
     <SheetPanel title={mode === 'uploading' ? 'Uploading your bill' : 'Add a bill'}>

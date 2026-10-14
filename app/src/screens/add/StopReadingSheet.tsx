@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router';
 import { Button, SheetPanel, toast } from '@/components/ohm';
 import { useSheetClose } from '@/shell';
+import { clearReadingDone } from './useReadingSimulation';
 
 /**
  * S04.2 Stop reading (/reading/stop, a sheet over Reading). Figma: Ohm / Sheet, the explanation in
@@ -14,6 +15,8 @@ export function StopReadingSheet() {
   const close = useSheetClose();
 
   const stop = () => {
+    // The bill is gone: the next read starts from scratch.
+    clearReadingDone();
     toast.success('Bill removed');
     // Reading and its sheet are the last two entries: step back over both to Home when we can,
     // otherwise (a deep link) replace them.

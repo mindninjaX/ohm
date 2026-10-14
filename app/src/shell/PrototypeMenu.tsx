@@ -1,9 +1,10 @@
 import { useState, type ReactNode } from 'react';
-import { useNavigate } from 'react-router';
+import { useLocation, useNavigate } from 'react-router';
 import { Popover } from 'radix-ui';
 import { BellRing, ChartColumn, FilePlus2, RotateCcw, SlidersHorizontal } from 'lucide-react';
 import { toast } from '@/components/ohm';
 import { cn } from '@/lib/utils';
+import { isSheetPath, normalizePath } from '@/routes';
 import { DATE_MODE_LABELS, useDemo, type DateMode } from './demo';
 
 export type FlowId = 'first-bill' | 'monthly' | 'home';
@@ -13,6 +14,11 @@ export interface FlowDef {
   title: string;
   hint: string;
   path: string;
+  /**
+   * For a sheet path: the screen that sits behind it. Without it a sheet opens over whichever
+   * screen the person was last on.
+   */
+  background?: string;
   icon: ReactNode;
 }
 
@@ -20,8 +26,9 @@ export const FLOWS: readonly FlowDef[] = [
   {
     id: 'first-bill',
     title: 'First bill',
-    hint: 'No bills yet. Add one and let Ohm read it.',
-    path: '/',
+    hint: 'Add the August bill and watch Ohm read it.',
+    path: '/add',
+    background: '/',
     icon: <FilePlus2 />,
   },
   {
@@ -48,17 +55,35 @@ export function useStartFlow(): (id: FlowId) => void {
     const flow = FLOWS.find((f) => f.id === id);
     if (!flow) return;
     startFlow(id);
-    navigate(flow.path, { replace: true });
+    navigate(flow.path, {
+      replace: true,
+      state: flow.background
+        ? {
+            backgroundLocation: {
+              pathname: flow.background,
+              search: '',
+              hash: '',
+              state: null,
+              key: `flow:${flow.id}`,
+            },
+          }
+        : undefined,
+    });
   };
 }
+
+/** Screens that are meant to sit outside the app (the lock screen, the Razorpay page). */
+const OUTSIDE_APP_PATHS: ReadonlySet<string> = new Set(['/notification', '/pay']);
 
 const DATE_MODES: readonly DateMode[] = ['before', 'after'];
 
 /**
  * The "Prototype" button and its menu: start a flow, switch the demo date, reset.
  *  - variant "pill": desktop, a labelled pill, bottom-left of the page outside the phone frame;
- *  - variant "dot": phone, a discreet edge tab (20 x 48) on the left edge, mid-height, so it never
- *    covers a header, footer or tab bar.
+ *  - variant "dot": phone, a discreet edge tab (14 x 48) on the left edge, mid-height. It is
+ *    narrower than the 16 px screen gutter, so it never covers a card, title or button; it
+ *    sits below the overlay layer (a sheet, its scrim and the camera cover it) and hides on
+ *    the sheet routes, the lock screen (/notification) and the Razorpay loader (/pay).
  * `container` is where the menu mounts (the shell root on desktop, the phone frame on a phone).
  */
 export function PrototypeMenu({
@@ -70,6 +95,8 @@ export function PrototypeMenu({
 }) {
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
+  const { pathname } = useLocation();
+  const hideDot = isSheetPath(pathname) || OUTSIDE_APP_PATHS.has(normalizePath(pathname));
   const demo = useDemo();
   const startFlow = useStartFlow();
 
@@ -105,14 +132,20 @@ export function PrototypeMenu({
           <button
             type="button"
             aria-label="Prototype menu"
+            data-slot="prototype-dot"
+            // Not focusable or tappable while hidden. z-0: the sheet scrim and panels, the camera and
+            // popovers are later in the portal layer (or higher), so they all draw over it.
+            tabIndex={hideDot && !open ? -1 : undefined}
+            aria-hidden={hideDot && !open ? true : undefined}
             className={cn(
-              'pointer-events-auto absolute top-1/2 left-0 z-50 grid h-12 w-5 -translate-y-1/2 place-items-center rounded-r-full',
-              'bg-ink-strong/10 text-ink-muted/80 outline-none transition-[background-color,width] duration-150',
-              'hover:bg-ink-strong/15 active:w-6 focus-visible:ring-[3px] focus-visible:ring-ring-subtle',
-              'motion-reduce:transition-none motion-reduce:active:w-5',
+              'pointer-events-auto absolute top-1/2 left-0 z-0 grid h-12 w-3.5 -translate-y-1/2 place-items-center rounded-r-full',
+              'bg-ink-strong/10 text-ink-muted/80 opacity-60 outline-none transition-[background-color,width,opacity,visibility] duration-150',
+              'hover:bg-ink-strong/15 hover:opacity-100 active:w-4 focus-visible:opacity-100 focus-visible:ring-[3px] focus-visible:ring-ring-subtle',
+              'motion-reduce:transition-none motion-reduce:active:w-3.5',
+              hideDot && !open && 'pointer-events-none invisible opacity-0',
             )}
           >
-            <SlidersHorizontal className="size-3" aria-hidden="true" />
+            <SlidersHorizontal className="size-2.5" aria-hidden="true" />
           </button>
         )}
       </Popover.Trigger>

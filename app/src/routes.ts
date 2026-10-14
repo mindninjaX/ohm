@@ -3,7 +3,7 @@
  * Screen ids and names match the frame names in the Figma file ("Screens" page).
  *
  * Two kinds of route:
- *  - screens: full pages that push and pop with a slide (tab switches cross-fade);
+ *  - screens: full pages that push and pop with a slide (tab switches fade through);
  *  - sheets: bottom sheets that open over a parent screen (`sheetParent`). A deep link to a
  *    sheet renders its parent behind it. See src/shell/sheets.tsx.
  */
@@ -85,7 +85,7 @@ export type Tab = 'bills' | 'trends';
 
 /**
  * The tab a screen belongs to, or null when it is not a tab screen. Moving between two
- * different tabs cross-fades; everything else slides.
+ * different tabs fades through (no slide); everything else slides.
  */
 export function tabOf(pathname: string): Tab | null {
   const p = normalizePath(pathname);

@@ -14,3 +14,11 @@ export const ADD_TILE_WIDTH = 168;
 /** The gap Figma uses between the tiles on S03, both ways. */
 export const ADD_TILE_GAP = 11;
 
+
+/**
+ * Prototype-only controls that Figma does not draw ("Skip" on S04, "Simulate the email arriving" on S03.1).
+ * In capture mode (the Figma frames, `npm run diff`, /compare) a control is left out, so the frame is exactly
+ * what Figma draws. Once a control has been added to its Figma frame, set it to true here and it shows in
+ * capture mode too.
+ */
+export const IN_FIGMA = { skip: false, simulateEmail: false } as const;

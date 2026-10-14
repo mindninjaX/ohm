@@ -32,10 +32,10 @@ If this session ends, start here.
 ## Status at handoff
 - Figma designs: done and audited (ready for development); file organised; no annotations.
 - App: all screens built (most within 0.2 % of Figma). Running: shared component changes, then an Opus review (diffs, flows, motion, Aside usability run) and Sonnet fixes (workflow wf_35f88f3b-a0b).
-- Deck: slides being built from the script and kit (workflow wf_4683273f-25e: 4 builders, Opus review, polish, second review, polish, PDF export to specs/deck/export/).
+- Deck: DONE as is (user, 14 Oct: "whatever we have now is good enough"). 29 slides in Section "Deck" on 🎤 Deck; review and polish deliberately skipped. Real QR for the live link on slides 02 and 17.
 
 ## Still to do
-1. Deploy: approved by the user on 14 Oct (public repo mindninjaX/ohm, GitHub Pages via .github/workflows/pages.yml, site https://mindninjax.github.io/ohm/). Every push to main that touches app/ redeploys.
+1. Deploy: LIVE since 14 Oct at https://mindninjax.github.io/ohm/ (deep links work through 404.html). Approved by the user on 14 Oct (public repo mindninjaX/ohm, GitHub Pages via .github/workflows/pages.yml, site https://mindninjax.github.io/ohm/). Every push to main that touches app/ redeploys.
 2. Put the live prototype link and its QR code on deck slides 2 (Resources), 17 (prototype) and 29 (Thanks): the kit's QR block is a placeholder.
 3. No deck PDF needed (user, 14 Oct).
 4. The user will edit the sample-bill wording on deck slide 12 themselves.

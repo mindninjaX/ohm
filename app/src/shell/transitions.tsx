@@ -20,9 +20,10 @@ import {
   tabOf,
   type OhmRoute,
 } from '@/routes';
+import { toast } from '@/components/ohm';
 import { GalleryPage } from './GalleryPage';
 import { HistoryTracker, readHistoryStateIndex } from './history';
-import { PUSH_DISTANCE, SCREEN_TRANSITION, TAB_TRANSITION } from './motion';
+import { PUSH_DISTANCE, SCREEN_TRANSITION } from './motion';
 import { ShellPlaceholder, ShellPlaceholderSheet } from './Placeholders';
 import { screenFor } from './screens';
 import { SheetHost } from './sheets';
@@ -32,10 +33,12 @@ import { SheetHost } from './sheets';
  *
  * Every full screen is a "layer": an absolutely positioned, vertically scrolling page that
  * fills the app. Changing screen mounts a new layer and lets the old one leave:
- *  - forward (push): the new layer slides in from the right (24 px) and fades in over 250 ms;
- *  - back (pop): the current layer slides out to the right while the one below settles in;
- *  - tab switch (Bills and Trends): a cross-fade, no slide;
- *  - reduced motion: a plain fade.
+ *  - forward (push): the old layer fades out (90 ms), then the new one slides in from the right
+ *    (24 px) and fades in (fade-through: both screens are never readable at once);
+ *  - back (pop): the current layer slides out to the right and fades out, then the one below
+ *    settles in the same way;
+ *  - tab switch (Bills and Trends): a quick fade-through, no slide;
+ *  - reduced motion: the tab fade-through.
  * Direction comes from the history position (history.ts), so browser back and forward work.
  *
  * Sheet routes render over a background screen (see sheets.tsx). The background location is,
@@ -53,10 +56,21 @@ interface LayerState {
   kind: TransitionKind;
 }
 
+/**
+ * Fade-through: the two screens are never both readable. The leaving layer fades out fast
+ * (90 ms) and the arriving one starts fading in just as it is gone (80 to 90 ms in), so
+ * text from one screen never shows through the other. The slide (24 px, 250 ms) runs on its
+ * own clock underneath.
+ */
+const FADE_OUT = { duration: 0.09, ease: 'easeIn' } as const;
+const FADE_IN = { duration: 0.16, delay: 0.08, ease: 'easeOut' } as const;
+const TAB_FADE_OUT = { duration: 0.08, ease: 'easeIn' } as const;
+const TAB_FADE_IN = { duration: 0.14, delay: 0.06, ease: 'easeOut' } as const;
+
 const layerVariants: Variants = {
   initial: ({ kind }: LayerCustom) => {
     if (kind === 'forward') return { opacity: 0, x: PUSH_DISTANCE };
-    if (kind === 'back') return { opacity: 1, x: -12 };
+    if (kind === 'back') return { opacity: 0, x: -12 };
     if (kind === 'tab') return { opacity: 0, x: 0 };
     return { opacity: 1, x: 0 };
   },
@@ -64,27 +78,22 @@ const layerVariants: Variants = {
     opacity: 1,
     x: 0,
     transition:
-      kind === 'forward'
-        ? { x: SCREEN_TRANSITION, opacity: { duration: 0.18, ease: 'easeOut' } }
+      kind === 'forward' || kind === 'back'
+        ? { x: SCREEN_TRANSITION, opacity: FADE_IN }
         : kind === 'tab'
-          ? TAB_TRANSITION
+          ? { opacity: TAB_FADE_IN }
           : SCREEN_TRANSITION,
   }),
   exit: ({ kind }: LayerCustom) => {
     if (kind === 'back') {
-      // The leaving screen is on top and slides away to the right.
-      return { opacity: 0, x: PUSH_DISTANCE, transition: SCREEN_TRANSITION };
+      // The leaving screen slides away to the right while it fades out.
+      return { opacity: 0, x: PUSH_DISTANCE, transition: { x: SCREEN_TRANSITION, opacity: FADE_OUT } };
     }
     if (kind === 'tab') {
-      // Stay opaque while the new screen fades in over it, then drop out: no dip to grey.
-      return { opacity: 0, transition: { duration: 0.1, delay: 0.16, ease: 'easeOut' } };
+      return { opacity: 0, transition: { opacity: TAB_FADE_OUT } };
     }
-    // Forward: drift left a little under the incoming screen, fade out at the end.
-    return {
-      opacity: 0,
-      x: -12,
-      transition: { x: SCREEN_TRANSITION, opacity: { duration: 0.15, delay: 0.12, ease: 'easeOut' } },
-    };
+    // Forward: drift left a little while fading out, before the new screen arrives.
+    return { opacity: 0, x: -12, transition: { x: SCREEN_TRANSITION, opacity: FADE_OUT } };
   },
 };
 
@@ -200,6 +209,12 @@ function backgroundFromState(state: unknown): Location | null {
   return null;
 }
 
+/**
+ * Screens that sit outside the app (the lock screen and the Razorpay page). An in-app toast
+ * ("Copied", "Link copied") must not follow the person onto them.
+ */
+const OUTSIDE_APP_SCREENS: ReadonlySet<string> = new Set(['/notification', '/pay']);
+
 /** All routes, with screen transitions and sheets. Render once, inside a router. */
 export function AnimatedRoutes() {
   const location = useLocation();
@@ -247,6 +262,11 @@ export function AnimatedRoutes() {
     layerState.current = { key: screenKey, kind };
   }
   const custom: LayerCustom = { kind: reduce && layerState.current.kind !== 'none' ? 'tab' : layerState.current.kind };
+
+  // Entering the lock screen or the Razorpay page clears any toast left over from the app.
+  useEffect(() => {
+    if (OUTSIDE_APP_SCREENS.has(screenKey)) toast.dismiss();
+  }, [screenKey]);
 
   const dismiss = useCallback(() => {
     const bgIndex = screenEntry.index;

@@ -16,7 +16,10 @@ export const EASE_OUT = [0.22, 1, 0.36, 1] as const;
 /** Push and pop of a screen: 250 ms. */
 export const SCREEN_TRANSITION: Transition = { duration: 0.25, ease: EASE_OUT };
 
-/** Tab cross-fade. */
+/**
+ * Tab switch, the whole thing end to end. The screens fade through (see transitions.tsx): the old one
+ * out in 80 ms, the new one in from 60 ms over 140 ms, never both readable.
+ */
 export const TAB_TRANSITION: Transition = { duration: 0.22, ease: 'easeOut' };
 
 /**

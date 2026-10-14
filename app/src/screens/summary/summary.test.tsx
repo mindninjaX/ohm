@@ -12,6 +12,7 @@ import {
   TOTAL_BEFORE_ROUNDING,
 } from '@/data/bill';
 import { formatINR } from '@/lib/format';
+import { PayScreen } from '@/screens/pay/PayScreen';
 import { DemoProvider } from '@/shell';
 import { DEFAULT_DEMO_STATE } from '@/shell/demo';
 import { Breakdown } from './Breakdown';
@@ -43,9 +44,9 @@ function Where() {
   return <output data-testid="where">{pathname + search}</output>;
 }
 
-function renderAt(path: string, ui: ReactNode, dateMode: 'before' | 'after' = 'before') {
+function renderAt(path: string, ui: ReactNode, dateMode: 'before' | 'after' = 'before', paid = false) {
   return render(
-    <DemoProvider initial={{ ...DEFAULT_DEMO_STATE, dateMode }}>
+    <DemoProvider initial={{ ...DEFAULT_DEMO_STATE, dateMode, flags: { ...DEFAULT_DEMO_STATE.flags, paid } }}>
       <MemoryRouter initialEntries={[path]}>
         <Routes>
           <Route path="*" element={ui} />
@@ -88,6 +89,47 @@ describe('S06 Bill summary', () => {
     expect(screen.getByText(`Pay by Wed 16 Sep`, { exact: false })).toBeInTheDocument();
     expect(screen.getByText(`You could have saved ${formatINR(SAVING)}`)).toBeInTheDocument();
     expect(screen.getByRole('button', { name: `Pay ${formatINR(TOTAL)}` })).toBeInTheDocument();
+  });
+});
+
+describe('S06 Bill summary, once the bill is paid', () => {
+  it('shows the paid card and a receipt button, never a second Pay button', () => {
+    renderAt('/bill', <BillSummary />, 'before', true);
+    const card = document.querySelector('[data-slot="bill-card"]') as HTMLElement;
+    expect(card).toHaveAttribute('data-state', 'paid');
+    expect(card.querySelector('[data-slot="amount"]')).toHaveTextContent('₹36,09,190');
+    expect(within(card).getByText('Paid Thu 3 Sep')).toBeInTheDocument();
+    expect(within(card).getByText('Waiting for Northgrid to confirm')).toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: /^Pay / })).toBeNull();
+    expect(screen.queryByText(/Pay early, save/)).toBeNull();
+    fireEvent.click(screen.getByRole('button', { name: 'View receipt' }));
+    expect(screen.getByTestId('where')).toHaveTextContent('/paid');
+  });
+
+  it('shows what was paid when the discount had ended', () => {
+    renderAt('/bill', <BillSummary />, 'after', true);
+    const card = document.querySelector('[data-slot="bill-card"]') as HTMLElement;
+    expect(card.querySelector('[data-slot="amount"]')).toHaveTextContent('₹36,42,160');
+    expect(within(card).getByText('Paid Wed 9 Sep')).toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: /^Pay / })).toBeNull();
+    expect(screen.getByRole('button', { name: 'View receipt' })).toBeInTheDocument();
+  });
+
+  it('opening /pay once the bill is paid goes straight to the receipt', () => {
+    render(
+      <DemoProvider initial={{ ...DEFAULT_DEMO_STATE, flags: { ...DEFAULT_DEMO_STATE.flags, paid: true } }}>
+        <MemoryRouter initialEntries={['/bill', '/pay']} initialIndex={1}>
+          <Routes>
+            <Route path="/pay" element={<PayScreen />} />
+            <Route path="/paid" element={<div>receipt</div>} />
+          </Routes>
+          <Where />
+        </MemoryRouter>
+      </DemoProvider>,
+    );
+    expect(screen.getByTestId('where')).toHaveTextContent('/paid');
+    expect(screen.getByText('receipt')).toBeInTheDocument();
+    expect(screen.queryByText('Opening Razorpay')).toBeNull();
   });
 });
 

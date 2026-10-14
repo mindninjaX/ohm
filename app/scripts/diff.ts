@@ -8,7 +8,8 @@
  * mismatch %. Writes tests/visual/out/<id>-app.png, -diff.png, -side.png and out/index.html.
  *
  * It is a measuring tool: the exit code is 0 even when frames fail. --strict exits 1 when any frame
- * differs by more than 1.5 % or has a different size. Exit code 2: it could not run at all (dev
+ * differs by more than 1.5 %, has a different size, or has a flat Figma fill drawn in another colour (the flat-area
+ * pass, see tests/visual/README.md). Exit code 2: it could not run at all (dev
  * server down, browser missing).
  *
  * Frame ids: S01-1 or S01.1, any case; none = every frame. See tests/visual/screens.ts.
@@ -114,7 +115,7 @@ devServer?.kill();
 console.log('\n' + formatTable(results));
 const measured = results.filter((r) => r.comparison);
 const passing = measured.filter((r) => passes(r)).length;
-console.log(`\n${passing} of ${results.length} frames within ${STRICT_LIMIT_PCT} % and the same size. Images: tests/visual/out/<id>-side.png`);
+console.log(`\n${passing} of ${results.length} frames pass: within ${STRICT_LIMIT_PCT} %, the same size, no flat fill in another colour. Images: tests/visual/out/<id>-side.png`);
 const noisy = results.filter((r) => r.errors.length > 0);
 for (const r of noisy) console.log(`console errors on ${r.frame.id}: ${r.errors.slice(0, 3).join(' | ')}`);
 if (measured.length > 0) console.log(`Overview: ${writeIndex(results)}`);

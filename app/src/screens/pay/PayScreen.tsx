@@ -1,5 +1,5 @@
-import { useCallback, useRef } from 'react';
-import { useNavigate } from 'react-router';
+import { useCallback, useRef, useState } from 'react';
+import { Navigate, useNavigate } from 'react-router';
 import { RazorpayLoader } from '@/illustrations';
 import { useCapture, useDemo } from '@/shell';
 import { PAID_FROM_PAY } from './paidState';
@@ -16,12 +16,17 @@ const LOADER_MS = 1500;
  *   after:  ... / > /bill > /  > /paid       (the loader's entry becomes Home, then Paid is pushed)
  *
  * so Back from Paid goes home. In capture mode (`?capture=1`) it just shows the loader.
+ *
+ * The bill can only be paid once: opening /pay when `paid` is already set (Forward, a saved link) is a no-op that
+ * replaces itself with the receipt. It looks at the flag as the screen opens, so recording the payment below
+ * never sends the screen anywhere on its own.
  */
 export function PayScreen() {
   const navigate = useNavigate();
-  const { setFlag } = useDemo();
+  const { flags, setFlag } = useDemo();
   const capture = useCapture();
   const finished = useRef(false);
+  const [alreadyPaid] = useState(() => flags.paid && !capture);
 
   const finish = useCallback(() => {
     if (finished.current) return;
@@ -30,6 +35,8 @@ export function PayScreen() {
     navigate('/', { replace: true });
     navigate('/paid', { state: PAID_FROM_PAY });
   }, [navigate, setFlag]);
+
+  if (alreadyPaid) return <Navigate to="/paid" replace />;
 
   return (
     <div

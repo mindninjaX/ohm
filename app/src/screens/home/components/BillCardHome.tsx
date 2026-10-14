@@ -19,7 +19,12 @@ export function BillCardHome({ state }: { state: BillCardState }) {
       <div className="flex flex-col gap-4 p-5">
         <div className="flex flex-col gap-1">
           <p className="text-sm font-medium text-ink-muted">August bill</p>
-          <Amount value={paid ? PAYMENT.amount : TOTAL} size="l" countUp />
+          <Amount
+            value={paid ? PAYMENT.amount : TOTAL}
+            size="l"
+            countUp
+            countFrom={paid ? PAYMENT.amount * 0.95 : 0}
+          />
         </div>
         {paid ? (
           <DueLine tone="paid" size="s">{`Paid ${formatDate(PAYMENT.paidAt)}`}</DueLine>

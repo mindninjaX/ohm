@@ -44,7 +44,7 @@ export function NotificationScreen() {
         />
         <h1 className="sr-only">Lock screen, Thursday 3 September, 9:41</h1>
         <div className="absolute inset-x-3.5 bottom-[138px]">
-          <LockNotification onOpen={() => navigate('/bill')} />
+          <LockNotification onOpen={() => navigate('/bill', { replace: true })} />
         </div>
         <LockControls />
       </motion.div>

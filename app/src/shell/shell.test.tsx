@@ -1,5 +1,5 @@
 import { act, fireEvent, render, screen, waitFor } from '@testing-library/react';
-import { MemoryRouter, NavigationType, useLocation } from 'react-router';
+import { MemoryRouter, NavigationType, useLocation, useNavigate } from 'react-router';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { App } from '@/App';
 import { SheetPanel, toast } from '@/components/ohm';
@@ -137,6 +137,48 @@ describe('shell', () => {
   });
 });
 
+describe('prototype dot (phone)', () => {
+  // By slot: a hidden button has no accessible name to find it by.
+  const dot = () => document.querySelector<HTMLElement>('[data-slot="prototype-dot"]')!;
+
+  it('is there on a screen, and out of the way on a sheet, the lock screen and the Razorpay page', async () => {
+    const home = renderAt('/');
+    await screen.findByRole('heading', { level: 1, name: 'S01 Home' });
+    expect(dot()).not.toHaveAttribute('aria-hidden');
+    expect(dot()).not.toHaveClass('invisible');
+    home.unmount();
+
+    for (const path of ['/add', '/bill/share', '/notification', '/pay']) {
+      const view = renderAt(path);
+      await screen.findByTestId('where');
+      expect(dot(), path).toHaveAttribute('aria-hidden', 'true');
+      expect(dot(), path).toHaveClass('invisible', 'pointer-events-none');
+      view.unmount();
+    }
+  });
+
+  it('sits below the overlay layer and inside the 16 px gutter', async () => {
+    renderAt('/');
+    await screen.findByRole('heading', { level: 1, name: 'S01 Home' });
+    // z-0 in the portal layer: the sheet scrim, panels and the camera come later or higher.
+    expect(dot()).toHaveClass('z-0', 'w-3.5');
+    expect(dot()).not.toHaveClass('z-50');
+  });
+
+  it('starts the first-bill flow at the Add sheet, over Home', async () => {
+    const { container } = renderAt('/bill');
+    fireEvent.click(await screen.findByRole('button', { name: 'Prototype menu' }));
+    expect(await screen.findByText('Add the August bill and watch Ohm read it.')).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: /First bill/ }));
+    await waitFor(() => expect(screen.getByTestId('where')).toHaveTextContent('/add'));
+    await screen.findByRole('dialog');
+    await waitFor(() => {
+      const layers = [...container.querySelectorAll('[data-slot="screen-layer"]')];
+      expect(layers.map((l) => l.getAttribute('data-path'))).toContain('/');
+    });
+  });
+});
+
 describe('shell overlays', () => {
   it('shows the Ohm toast, not a generic one', async () => {
     renderAt('/');
@@ -148,6 +190,26 @@ describe('shell overlays', () => {
     expect(t.closest('[data-slot="toast"]')).toHaveAttribute('data-tone', 'success');
     // It mounts in the portal layer inside the frame, not in the page body.
     expect(t.closest('.ohm-portal')).not.toBeNull();
+  });
+
+  it('clears an in-app toast when the lock screen opens', async () => {
+    function GoTo({ to }: { to: string }) {
+      const navigate = useNavigate();
+      return <button onClick={() => navigate(to)}>go to {to}</button>;
+    }
+    render(
+      <MemoryRouter initialEntries={['/']}>
+        <App />
+        <GoTo to="/notification" />
+      </MemoryRouter>,
+    );
+    await screen.findByRole('heading', { level: 1, name: 'S01 Home' });
+    act(() => {
+      toast.success('Copied');
+    });
+    expect(await screen.findByText('Copied')).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'go to /notification' }));
+    await waitFor(() => expect(screen.queryByText('Copied')).not.toBeInTheDocument());
   });
 
   it('lets a sheet route panel start a drag from its grabber and title row', () => {

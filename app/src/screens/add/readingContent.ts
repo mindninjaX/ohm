@@ -128,3 +128,6 @@ export const DONE_HEADER = { title: 'How Ohm read this bill', subtitle: `From yo
 
 export const READING_CAPTION = 'Takes about 10 seconds. You can close this screen. We will notify you when it is ready.';
 export const DONE_CAPTION = `Ohm finished reading this bill. All${NBSP}${CHECKS.length}${NBSP}checks${NBSP}are${NBSP}fine.`;
+
+/** The toast that keeps the caption's promise ("We will notify you") after the X on a read in progress. */
+export const READY_TOAST = `${monthName} bill is ready`;

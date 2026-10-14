@@ -21,8 +21,19 @@ npm run test:visual -- -g S06       # the same as a Playwright test (fails over 
 | size match | `yes 393x1569`, or `NO figma 393x1569, app 393x1480 (-89px)`. A height difference means the spacing is off somewhere (the worst band usually shows where); fix it before looking at pixels. |
 | mismatch % | pixels that differ, of the whole frame. Under 1.5 % is the bar. |
 | worst band | the 50 px band (CSS pixels from the top) with the most differing pixels. |
+| flat cells | the flat-area pass (below): `ok`, or how many 16 px cells have a wrong flat fill (and the most flagged pixels in one). |
 
 Output per frame in `tests/visual/out/` (git-ignored): `<id>-app.png` (the app), `<id>-diff.png` (red = different) and `<id>-side.png` (Figma, app, diff side by side, 2x). For a look by eye open `http://localhost:8810/ohm/compare/S06`: side by side, an overlay with an opacity slider, and a difference blend (black where they agree). Arrow keys move between frames.
+
+## The flat-area pass
+
+pixelmatch at threshold 0.1 forgives near-white mistakes: a 16 px band of `surface-muted` where Figma has white scores 0.11 %. So `measureFrame` runs a second check, only where Figma is one flat colour (`tests/visual/lib.ts`, `FLAT_*`):
+
+- a Figma pixel is flat when every pixel within 3 device px of it (a 7 x 7 window) is within 6 of it (sum of the R, G and B differences): the inside of a fill, not an edge, text or a shadow ramp;
+- it is flagged when the app's pixel differs from it by more than 10 on any channel;
+- flagged pixels are counted per 16 px cell (1024 device px at 2x). More than 60 in one cell fails the frame: `passes()` and the Playwright test both check it, and `--strict` fails on it.
+
+`npm run diff` prints a `flat cells` column and, under the table, the failing regions (x, y in CSS px, the Figma colour and the app colour that replaced it). Flagged pixels are orange in `<id>-diff.png` (red stays pixelmatch). A 3 x 3 window also flagged text that sits a pixel off, so the window is 7 x 7; text jitter under 3 device px is ignored. A frame whose Figma export is not the whole screen (S09.1 is the toast alone on black) fails this pass like it fails the main one.
 
 ## Capture mode (`?capture=1`)
 

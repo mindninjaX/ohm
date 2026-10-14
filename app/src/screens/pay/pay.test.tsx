@@ -98,6 +98,26 @@ describe('S11 Paid', () => {
     expect(screen.queryByText(/You saved/)).not.toBeInTheDocument();
     expect(textOf(screen.getByRole('heading', { name: 'Paid' }).parentElement)).toContain('36,42,160');
   });
+
+  it('counts the paid figure up from 95 % of itself, never from 0', () => {
+    const { container } = renderIn(<PaidScreen />);
+    const amount = container.querySelector('[data-slot="share-paid-result"] [data-slot="amount"]') as HTMLElement;
+    const counting = amount.querySelector('[aria-hidden]:not(:first-child)') as HTMLElement | null;
+    const shown = [...amount.querySelectorAll('span[aria-hidden]')].map((el) => el.textContent ?? '').join(' ');
+    // 95 % of 36,09,190 is 34,28,730.5, which rounds to 34,28,731.
+    expect(counting).not.toBeNull();
+    expect(shown).toContain('34,28,731');
+    expect(shown).not.toMatch(/(^|\s)0(\s|$)/);
+  });
+
+  it('fades the receipt card in with its first row, so it is never an empty white box', () => {
+    const { container } = renderIn(<PaidScreen />);
+    const card = container.querySelector('[data-slot="share-paid-receipt-card"]') as HTMLElement;
+    const lift = (el: Element | null) => (el as HTMLElement).style.opacity;
+    // The card's own wrapper and its first row both start hidden (opacity 0) and play at the same time.
+    expect(lift(card.parentElement)).toBe('0');
+    expect(lift(card.firstElementChild)).toBe('0');
+  });
 });
 
 describe('S11.1 Share receipt', () => {

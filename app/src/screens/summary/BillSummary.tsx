@@ -4,9 +4,12 @@ import { Button, Footer, Header, ScreenScaffold } from '@/components/ohm';
 import { EARLY_PRICE, TOTAL } from '@/data/bill';
 import { formatINR } from '@/lib/format';
 import { useDemo } from '@/shell';
-import { BillCardAfterEarly, BillCardSummary } from './components/BillCard';
+import { BillCardAfterEarly, BillCardPaid, BillCardSummary } from './components/BillCard';
 import { PriceLadder } from './components/PriceLadder';
 import { JulyChangeCard, PartsCard } from './components/SummaryCards';
+
+/** The ladder's rail starts drawing once the card's shrink has mostly landed (strike at 0.6 s, shrink 1.0 to 1.6 s). */
+const LADDER_DELAY = 1.45;
 
 /**
  * S06 Bill summary, and S06.1 (the same screen once the demo date is after Tue 8 Sep: the
@@ -14,10 +17,14 @@ import { JulyChangeCard, PartsCard } from './components/SummaryCards';
  *
  * Before the deadline the bill card plays Summary > Summary discounted after 600 ms (see BillCard),
  * then the ladder rail draws, and the bars on the two cards below grow as they scroll into view.
+ *
+ * Once the bill is paid (the demo flag `paid`, set by /pay; Back from Paid or Home lands here) the card says so,
+ * the price ladder goes (there is nothing left to time) and the footer offers the receipt instead of a second payment.
  */
 export function BillSummary() {
   const navigate = useNavigate();
-  const { afterEarlyDeadline } = useDemo();
+  const { afterEarlyDeadline, flags } = useDemo();
+  const paid = flags.paid;
   const payAmount = afterEarlyDeadline ? TOTAL : EARLY_PRICE;
   const openChecks = () => navigate('/bill/checks');
 
@@ -37,17 +44,27 @@ export function BillSummary() {
         />
       }
       footer={
-        <Footer trustLine>
-          <Button onClick={() => navigate('/pay')}>Pay {formatINR(payAmount)}</Button>
+        <Footer trustLine={!paid}>
+          {paid ? (
+            <Button variant="secondary" onClick={() => navigate('/paid')}>
+              View receipt
+            </Button>
+          ) : (
+            <Button onClick={() => navigate('/pay')}>Pay {formatINR(payAmount)}</Button>
+          )}
         </Footer>
       }
     >
-      {afterEarlyDeadline ? (
+      {paid ? (
+        <BillCardPaid onOpenChecks={openChecks} />
+      ) : afterEarlyDeadline ? (
         <BillCardAfterEarly onOpenChecks={openChecks} />
       ) : (
         <BillCardSummary onOpenChecks={openChecks} />
       )}
-      <PriceLadder mode={afterEarlyDeadline ? 'after-early' : 'start'} delay={afterEarlyDeadline ? 0.3 : 1.05} />
+      {!paid && (
+        <PriceLadder mode={afterEarlyDeadline ? 'after-early' : 'start'} delay={afterEarlyDeadline ? 0.3 : LADDER_DELAY} />
+      )}
       <Button variant="secondary" leftIcon={Share} onClick={() => navigate('/bill/share')}>
         Share with owner
       </Button>
